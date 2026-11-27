@@ -2061,21 +2061,38 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: "An unexpected server error occurred." });
 });
 
-const port = Number(process.env.PORT || 5000);
-
 if (!process.env.JWT_SECRET)
   console.warn("JWT_SECRET is missing. Set it before using authentication.");
 
-mongoose
-  .connect(
-    process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/anganwadi-care",
-  )
-  .then(() =>
-    app.listen(port, () =>
-      console.log(`Anganwadi API listening on http://localhost:${port}`),
-    ),
-  )
-  .catch((err) => {
-    console.error("Could not connect to MongoDB:", err.message);
-    process.exit(1);
-  });
+let databaseConnection;
+
+export function connectDatabase() {
+  if (mongoose.connection.readyState === 1) return Promise.resolve();
+  if (!databaseConnection) {
+    databaseConnection = mongoose
+      .connect(
+        process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/anganwadi-care",
+      )
+      .catch((error) => {
+        databaseConnection = undefined;
+        throw error;
+      });
+  }
+  return databaseConnection;
+}
+
+export { app };
+
+if (process.env.VERCEL !== "1") {
+  const port = Number(process.env.PORT || 5000);
+  connectDatabase()
+    .then(() =>
+      app.listen(port, () =>
+        console.log(`Anganwadi API listening on http://localhost:${port}`),
+      ),
+    )
+    .catch((err) => {
+      console.error("Could not connect to MongoDB:", err.message);
+      process.exit(1);
+    });
+}

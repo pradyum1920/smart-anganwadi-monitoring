@@ -16,6 +16,17 @@ Responsive React and Express application for Anganwadi center operations. The wo
 
 Vite proxies `/api` requests to the Express server on port 5000. The API waits for MongoDB before it starts listening.
 
+## Deploy to Vercel
+
+The Vite frontend and Express API are both deployed from this project. Vercel serves `api/[...path].js` for `/api/*` requests and the function connects to MongoDB before handling each request. Configure these environment variables in the Vercel project for **Production** (and Preview if needed):
+
+- `MONGODB_URI`: a MongoDB Atlas connection string reachable from Vercel
+- `JWT_SECRET`: a long, random signing secret
+- `ADMIN_BOOTSTRAP_KEY`: a long, one-time key for creating the first administrator
+- `CLIENT_ORIGIN`: the deployed site origin, such as `https://your-project.vercel.app`
+
+Redeploy after setting the variables. Check `/api/health` on the deployed domain; it should return `{"status":"ok","database":"connected"}`. If it reports a database error, check the Atlas network access list and the `MONGODB_URI` value. Create the first administrator using the bootstrap endpoint and `ADMIN_BOOTSTRAP_KEY`; do not use local demo credentials unless you separately seeded a production database.
+
 ## Sample dashboard data
 
 Run `npm run seed` to add 10 sample schools, 1,700 children, 154 Anganwadi workers, 20 supervisors, and example attendance, meal, growth, and upcoming activity records. The seeder does not overwrite existing records and skips repeat runs after the sample schools have been created.
