@@ -1,5 +1,5 @@
 import "dotenv/config";
-import mongoose from "mongoose";
+import { connectDatabase, disconnectDatabase } from "./postgres.js";
 import bcrypt from "bcryptjs";
 import {
   User,
@@ -189,11 +189,11 @@ today.setHours(0, 0, 0, 0);
 const pick = (list, index) => list[index % list.length];
 
 async function seed() {
-  if (!process.env.MONGODB_URI) {
-    throw new Error("MONGODB_URI is not configured.");
+  if (!process.env.SUPABASE_DB_URL) {
+    throw new Error("SUPABASE_DB_URL is not configured.");
   }
 
-  await mongoose.connect(process.env.MONGODB_URI);
+  await connectDatabase();
 
   let adminUser = await User.findOne({ role: "admin", email: "administration" });
   if (!adminUser) {
@@ -778,4 +778,4 @@ seed()
     console.error("Sample data seeding failed:", error.message);
     process.exitCode = 1;
   })
-  .finally(() => mongoose.disconnect());
+  .finally(() => disconnectDatabase());

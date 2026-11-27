@@ -5,3 +5,6 @@ server.log
 server-error.log
 vite.log
 vite-error.log
+.vercel
+.env*
+db.txt

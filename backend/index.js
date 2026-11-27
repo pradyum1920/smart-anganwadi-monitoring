@@ -2,7 +2,11 @@ import "dotenv/config";
 import express from "express";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import mongoose from "mongoose";
+import {
+  connectDatabase,
+  databaseConnected,
+  isValidRecordId,
+} from "../database/postgres.js";
 import cors from "cors";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
@@ -90,8 +94,7 @@ const getCenter = (req) =>
 app.get("/api/health", (req, res) =>
   res.json({
     status: "ok",
-    database:
-      mongoose.connection.readyState === 1 ? "connected" : "disconnected",
+    database: databaseConnected() ? "connected" : "disconnected",
   }),
 );
 
@@ -266,7 +269,7 @@ app.get(
 );
 
 const reportScope = async (req, res, schoolId) => {
-  if (!mongoose.isValidObjectId(schoolId)) {
+  if (!isValidRecordId(String(schoolId || ""))) {
     res.status(400).json({ message: "Select a valid school." });
     return null;
   }
@@ -2066,7 +2069,7 @@ app.use((req, res) =>
 app.use((err, req, res, next) => {
   console.error(err);
 
-  if (err.code === 11000)
+  if (err.code === 11000 || err.code === "23505")
     return res
       .status(409)
       .json({ message: "A record with those details already exists." });
@@ -2079,24 +2082,8 @@ app.use((err, req, res, next) => {
 if (!process.env.JWT_SECRET)
   console.warn("JWT_SECRET is missing. Set it before using authentication.");
 
-let databaseConnection;
-
-export function connectDatabase() {
-  if (mongoose.connection.readyState === 1) return Promise.resolve();
-  if (!databaseConnection) {
-    databaseConnection = mongoose
-      .connect(
-        process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/anganwadi-care",
-      )
-      .catch((error) => {
-        databaseConnection = undefined;
-        throw error;
-      });
-  }
-  return databaseConnection;
-}
-
 export { app };
+export { connectDatabase };
 
 if (process.env.VERCEL !== "1") {
   const port = Number(process.env.PORT || 5000);
@@ -2107,7 +2094,7 @@ if (process.env.VERCEL !== "1") {
       ),
     )
     .catch((err) => {
-      console.error("Could not connect to MongoDB:", err.message);
+      console.error("Could not connect to Supabase Postgres:", err.message);
       process.exit(1);
     });
 }

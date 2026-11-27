@@ -2831,7 +2831,7 @@ function AdminStudentList({
         address: "",
       }));
 
-      setSuccess(`${body.name || "Student"} enrolled and saved to MongoDB.`);
+      setSuccess(`${body.name || "Student"} enrolled and saved successfully.`);
       await loadStudents();
       await onStudentsChanged?.();
     } catch (err) {
@@ -2918,7 +2918,7 @@ function AdminStudentList({
                 <h2>Enroll a new student</h2>
                 <p>
                   Enter the child and guardian details below to save immediately
-                  in MongoDB.
+                  in the database.
                 </p>
               </div>
             </div>

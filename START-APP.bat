@@ -4,16 +4,17 @@ echo   Smart Anganwadi Monitoring System - Local Startup
 echo ============================================================
 echo.
 
-REM Check if MongoDB is running
-echo Checking MongoDB status...
-tasklist /fi "imagename eq mongod.exe" 2>NUL | find /I /N "mongod.exe" >NUL
-if "%ERRORLEVEL%"=="0" (
-    echo [OK] MongoDB is already running.
-) else (
-    echo Starting MongoDB...
-    start "" /B "C:\Program Files\MongoDB\Server\8.2\bin\mongod.exe" --config "C:\Program Files\MongoDB\Server\8.2\bin\mongod.cfg"
-    timeout /t 4 /nobreak >NUL
-    echo [OK] MongoDB started.
+REM Start the local Supabase stack and apply pending schema migrations.
+echo Starting local Supabase Postgres...
+call npx supabase start
+if errorlevel 1 (
+    echo [ERROR] Supabase could not start. Make sure Docker Desktop is running.
+    exit /b 1
+)
+call npx supabase db push
+if errorlevel 1 (
+    echo [ERROR] Could not apply Supabase database migrations.
+    exit /b 1
 )
 
 echo.

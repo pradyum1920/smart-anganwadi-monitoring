@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     await connectDatabase();
     return app(req, res);
   } catch (error) {
-    console.error("Could not connect to MongoDB:", error.message);
+    console.error("Could not connect to Supabase Postgres:", error.message);
     return res.status(503).json({ message: "The service is temporarily unavailable." });
   }
 }

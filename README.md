@@ -6,41 +6,44 @@ Responsive React and Express application for Anganwadi center operations. The wo
 
 - `frontend/` contains the React/Vite app and static assets.
 - `backend/` contains the Express API.
-- `database/` contains the Mongoose models and sample data seeder.
+- `database/` contains the PostgreSQL-backed data models and sample data seeder.
+- `supabase/migrations/` contains the database schema managed by the Supabase CLI.
 - `api/` contains the Vercel function entry point that forwards `/api/*` requests to Express.
 
 ## Requirements
 
 - Node.js 20 or newer
-- MongoDB Community Server or a MongoDB Atlas connection string
+- Docker Desktop (for the local Supabase stack)
+- A Supabase project, or the local Supabase stack started by the CLI
 
 ## Start locally
 
-1. Copy `.env.example` to `.env` and set `MONGODB_URI`, a long random `JWT_SECRET`, and an `ADMIN_BOOTSTRAP_KEY` of your choice.
+1. Set `SUPABASE_DB_URL` in `.env`. The checked-in local value connects to the local Supabase database; for a hosted database, copy a connection string from **Supabase Dashboard → Connect**. For Vercel, use the transaction pooler connection string. See [Supabase connection options](https://supabase.com/docs/guides/database/connecting-to-postgres).
 2. Install dependencies with `npm install`.
-3. In one terminal, run `npm run server`.
-4. In another terminal, run `npm run dev` and open the Vite URL shown in the terminal.
+3. Start the local Supabase stack with `npm run supabase:start`, then apply the local migrations with `npm run supabase:migrate`.
+4. In one terminal, run `npm run server`.
+5. In another terminal, run `npm run dev` and open the Vite URL shown in the terminal.
 
-Vite proxies `/api` requests to the Express server on port 5000. The API waits for MongoDB before it starts listening.
+Vite proxies `/api` requests to the Express server on port 5000. The API waits for Supabase Postgres before it starts listening. The local Supabase CLI stack requires Docker. Run `npm run supabase:stop` when you want to stop it.
 
 ## Deploy to Vercel
 
-The Vite frontend and Express API are both deployed from this project. Vercel serves `api/[...path].js` for `/api/*` requests and the function connects to MongoDB before handling each request. Configure these environment variables in the Vercel project for **Production** (and Preview if needed):
+The Vite frontend and Express API are both deployed from this project. Vercel serves `api/[...path].js` for `/api/*` requests and the function connects to Supabase Postgres before handling each request. Configure these environment variables in the Vercel project for **Production** (and Preview if needed):
 
-- `MONGODB_URI`: a MongoDB Atlas connection string reachable from Vercel
+- `SUPABASE_DB_URL`: the Supabase transaction pooler connection string for serverless functions
 - `JWT_SECRET`: a long, random signing secret
 - `ADMIN_BOOTSTRAP_KEY`: a long, one-time key for creating the first administrator
 - `CLIENT_ORIGIN`: the deployed site origin, such as `https://your-project.vercel.app`
 
-Redeploy after setting the variables. Check `/api/health` on the deployed domain; it should return `{"status":"ok","database":"connected"}`. If it reports a database error, check the Atlas network access list and the `MONGODB_URI` value. Create the first administrator using the bootstrap endpoint and `ADMIN_BOOTSTRAP_KEY`; do not use local demo credentials unless you separately seeded a production database.
+Redeploy after setting the variables. Check `/api/health` on the deployed domain; it should return `{"status":"ok","database":"connected"}`. If it reports a database error, check the Supabase connection string and database password. Apply pending migrations to the hosted project with `npx supabase link` followed by `npx supabase db push --remote`. Create the first administrator using the bootstrap endpoint and `ADMIN_BOOTSTRAP_KEY`; do not use local demo credentials unless you separately seeded a production database.
 
 ## Deploy to Render
 
-Create a **Web Service** from this repository with the root directory left blank. Set the build command to `npm install && npm run build` and the start command to `npm start`. Add `MONGODB_URI`, `JWT_SECRET`, and `ADMIN_BOOTSTRAP_KEY` as Render environment variables. The Express service serves the built frontend and API from the same Render URL.
+Create a **Web Service** from this repository with the root directory left blank. Set the build command to `npm install && npm run build` and the start command to `npm start`. Add `SUPABASE_DB_URL`, `JWT_SECRET`, and `ADMIN_BOOTSTRAP_KEY` as Render environment variables. The Express service serves the built frontend and API from the same Render URL.
 
 ## Sample dashboard data
 
-Run `npm run seed` to add 10 sample schools, 1,700 children, 154 Anganwadi workers, 20 supervisors, and example attendance, meal, growth, and upcoming activity records. The seeder does not overwrite existing records and skips repeat runs after the sample schools have been created.
+Run `npm run seed` to add sample schools, children, Anganwadi workers, supervisors, and example attendance, meal, growth, and upcoming activity records. The seeder does not overwrite existing records and skips repeat runs after the sample schools have been created.
 
 Sample worker accounts use the password `SamplePass123!`; for example, `sample.worker.1.1@anganwadi.demo`. The administrator demo sign-in is `administration` / `administration123`.
 
