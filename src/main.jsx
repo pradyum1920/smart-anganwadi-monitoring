@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
@@ -112,6 +112,7 @@ function App() {
   const [authBusy, setAuthBusy] = useState(false);
   const [authError, setAuthError] = useState("");
   const [loginEmail, setLoginEmail] = useState("administration");
+  const [loginSchoolEmail, setLoginSchoolEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [loginRole, setLoginRole] = useState("admin");
   const [loginCenter, setLoginCenter] = useState("");
@@ -338,7 +339,11 @@ function App() {
         body: JSON.stringify(
           loginRole === "admin"
             ? { username: loginEmail, password: loginPassword }
-            : { centerId: loginCenter, password: loginPassword },
+            : {
+                centerId: loginCenter,
+                email: loginSchoolEmail,
+                password: loginPassword,
+              },
         ),
       });
 
@@ -534,6 +539,8 @@ function App() {
         center={loginCenter}
         setCenter={setLoginCenter}
         centers={loginCenters}
+        schoolEmail={loginSchoolEmail}
+        setSchoolEmail={setLoginSchoolEmail}
         onSubmit={login}
         busy={authBusy}
         error={authError}
@@ -747,6 +754,13 @@ function App() {
               {label === "Reports" && <span className="side-count">3</span>}
             </button>
           ))}
+          <button
+            className={`side-link ${page === "Change Password" ? "selected" : ""}`}
+            onClick={() => toggle("Change Password")}
+          >
+            <LockKeyhole size={18} />
+            Change password
+          </button>
           <button className="side-link" onClick={logout}>
             <UserRound size={18} />
             Sign out
@@ -828,26 +842,30 @@ function App() {
                     : page}
                 </h1>
                 <p className="subheading">
-                  {user.role === "admin"
+                  {page === "Change Password"
+                    ? "Update your password to keep your account secure."
+                    : user.role === "admin"
                     ? "Here’s what’s happening with your institution today."
                     : page === "Home"
                       ? "A little care goes a long way. Here’s your center today."
                       : "Your school dashboard and daily records."}
                 </p>
               </div>
-              <button
-                className="primary-button"
-                onClick={() => {
-                  if (user.role === "admin") toggle("Centers");
-                  else toggle("Attendance");
-                }}
-              >
-                <Plus size={16} />{" "}
-                {user.role === "admin" ? "Register school" : "Mark attendance"}{" "}
-                <ArrowRight size={16} />
-              </button>
+              {page !== "Change Password" && (
+                <button
+                  className="primary-button"
+                  onClick={() => {
+                    if (user.role === "admin") toggle("Centers");
+                    else toggle("Attendance");
+                  }}
+                >
+                  <Plus size={16} />{" "}
+                  {user.role === "admin" ? "Register school" : "Mark attendance"}{" "}
+                  <ArrowRight size={16} />
+                </button>
+              )}
             </div>
-            {page !== "Attendance" && (
+            {page !== "Attendance" && page !== "Change Password" && (
               <div
                 className={`stats ${user.role === "admin" ? "" : "school-stats"}`}
               >
@@ -927,7 +945,9 @@ function App() {
                 )}
               </div>
             )}
-            {user.role === "admin" ? (
+            {page === "Change Password" ? (
+              <PasswordChangeCard token={token} user={user} />
+            ) : user.role === "admin" ? (
               <AdminDashboardView
                 stats={stats}
                 latestGrowthLabel={latestGrowthLabel}
@@ -1572,6 +1592,119 @@ function App() {
   );
 }
 
+function PasswordChangeCard({ token, user }) {
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
+  const [busy, setBusy] = useState(false);
+
+  const submit = async (event) => {
+    event.preventDefault();
+    setError("");
+    setMessage("");
+
+    if (newPassword !== confirmPassword) {
+      setError("The new passwords do not match.");
+      return;
+    }
+    if (
+      newPassword.length < 8 ||
+      !/[A-Z]/.test(newPassword) ||
+      !/[a-z]/.test(newPassword) ||
+      !/[^A-Za-z0-9\s]/.test(newPassword)
+    ) {
+      setError(
+        "Use 8+ characters with an uppercase letter, a lowercase letter, and a special character.",
+      );
+      return;
+    }
+    if (currentPassword === newPassword) {
+      setError("Choose a new password different from your current password.");
+      return;
+    }
+
+    setBusy(true);
+    try {
+      const response = await fetch("/api/auth/change-password", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ currentPassword, newPassword }),
+      });
+      const body = await response.json();
+      if (!response.ok) throw new Error(body.message || "Could not change password.");
+
+      setMessage(body.message || "Your password has been changed.");
+      setCurrentPassword("");
+      setNewPassword("");
+      setConfirmPassword("");
+    } catch (changeError) {
+      setError(changeError.message);
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  return (
+    <section className="card password-change-card">
+      <div className="eyebrow">ACCOUNT SECURITY</div>
+      <h2>Change your password</h2>
+      <p>Confirm your current password, then choose a new one.</p>
+      {user.role !== "admin" && (
+        <p className="password-change-login-email">
+          After changing it, use this email to sign in: <b>{user.email}</b>
+        </p>
+      )}
+      <form className="password-change-form" onSubmit={submit}>
+        <label>
+          Current password
+          <input
+            type="password"
+            autoComplete="current-password"
+            required
+            value={currentPassword}
+            onChange={(event) => setCurrentPassword(event.target.value)}
+          />
+        </label>
+        <label>
+          New password
+          <input
+            type="password"
+            autoComplete="new-password"
+            minLength={8}
+            required
+            value={newPassword}
+            onChange={(event) => setNewPassword(event.target.value)}
+          />
+        </label>
+        <label>
+          Confirm new password
+          <input
+            type="password"
+            autoComplete="new-password"
+            minLength={8}
+            required
+            value={confirmPassword}
+            onChange={(event) => setConfirmPassword(event.target.value)}
+          />
+        </label>
+        <small className="password-change-hint">
+          At least 8 characters, including uppercase, lowercase, and a special character.
+        </small>
+        {error && <div className="password-change-error">{error}</div>}
+        {message && <div className="password-change-success">{message}</div>}
+        <button className="password-change-submit" type="submit" disabled={busy}>
+          {busy ? "Saving password…" : "Save new password"}
+        </button>
+      </form>
+    </section>
+  );
+}
+
 function AdminManagement({
   page,
   token,
@@ -1787,6 +1920,19 @@ function AdminManagement({
     e.preventDefault();
     setError("");
     setMessage("");
+
+    const password = userForm.password;
+    if (
+      password.length < 8 ||
+      !/[A-Z]/.test(password) ||
+      !/[a-z]/.test(password) ||
+      !/[^A-Za-z0-9\s]/.test(password)
+    ) {
+      setError(
+        "Password needs 8+ characters, an uppercase letter, a lowercase letter, and a special character.",
+      );
+      return;
+    }
 
     if (userForm.role !== "admin" && !userForm.center) {
       setError("Create a center before adding a worker or supervisor.");
@@ -2118,10 +2264,11 @@ function AdminManagement({
                 </div>
                 <div className="form-row">
                   <AdminField
-                    label="Temporary password · 10+ characters"
+                    label="Temporary password"
                     type="password"
-                    minLength={10}
+                    minLength={8}
                     required
+                    helperText="Use 8+ characters with uppercase, lowercase, and a special character."
                     value={userForm.password}
                     onChange={(v) => setUserForm({ ...userForm, password: v })}
                   />
@@ -2430,7 +2577,26 @@ function SchoolNoticePanel({ token }) {
   const query = useSchoolNotices(token);
   const client = useQueryClient();
   const [active, setActive] = useState(null);
+  const [incoming, setIncoming] = useState(null);
+  const knownNoticeIds = useRef(null);
   const notices = query.data || [];
+
+  useEffect(() => {
+    if (!query.data) return;
+
+    const currentIds = new Set(query.data.map((notice) => notice._id));
+    if (knownNoticeIds.current === null) {
+      knownNoticeIds.current = currentIds;
+      return;
+    }
+
+    const newlyArrived = query.data.find(
+      (notice) => !knownNoticeIds.current.has(notice._id),
+    );
+    knownNoticeIds.current = currentIds;
+
+    if (newlyArrived) setIncoming(newlyArrived);
+  }, [query.data]);
 
   const markRead = async (notice) => {
     setActive(notice);
@@ -2452,7 +2618,14 @@ function SchoolNoticePanel({ token }) {
           <div className="eyebrow">UPDATES FROM ADMINISTRATION</div>
           <h2>Notices</h2>
         </div>
-        <Bell size={18} />
+        <div className="school-notice-heading-actions">
+          {notices.some((notice) => !notice.read) && (
+            <span className="school-notice-unread-label">
+              {notices.filter((notice) => !notice.read).length} new
+            </span>
+          )}
+          <Bell size={18} />
+        </div>
       </div>
       {query.isLoading ? (
         <div className="dashboard-skeleton notice-loading" />
@@ -2465,13 +2638,20 @@ function SchoolNoticePanel({ token }) {
             key={notice._id}
             onClick={() => markRead(notice)}
           >
-            <span className={`priority-dot ${notice.priority}`} />
-            <span>
+            <span className={`priority-dot ${notice.priority || "normal"}`} aria-hidden="true" />
+            <span className="school-notice-copy">
+              <span className="school-notice-meta">
+                <small className={`school-notice-priority ${notice.priority || "normal"}`}>
+                  {notice.priority && notice.priority !== "normal"
+                    ? notice.priority
+                    : "Notice"}
+                </small>
+                <small>
+                  {new Date(notice.scheduledAt || notice.createdAt).toLocaleDateString()}
+                </small>
+              </span>
               <b>{notice.title}</b>
-              <small>
-                {new Date(notice.scheduledAt).toLocaleDateString()} ·{" "}
-                {notice.message}
-              </small>
+              <small className="school-notice-message">{notice.message}</small>
             </span>
             {!notice.read && <i className="notice-new-dot" />}
           </button>
@@ -2498,6 +2678,51 @@ function SchoolNoticePanel({ token }) {
               {active.attachment.name || "View attachment"}
             </a>
           )}
+        </div>
+      )}
+      {incoming && (
+        <div
+          className="school-notice-popup-backdrop"
+          onClick={() => setIncoming(null)}
+        >
+          <section
+            className="school-notice-popup"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="new-school-notice-title"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              className="school-notice-popup-close"
+              aria-label="Close new notice"
+              onClick={() => setIncoming(null)}
+            >
+              <X size={18} />
+            </button>
+            <div className="school-notice-popup-icon"><Bell size={21} /></div>
+            <span className={`school-notice-priority ${incoming.priority || "normal"}`}>
+              New {incoming.priority && incoming.priority !== "normal" ? incoming.priority : "notice"}
+            </span>
+            <h2 id="new-school-notice-title">{incoming.title}</h2>
+            <small className="school-notice-popup-date">
+              {new Date(incoming.scheduledAt || incoming.createdAt).toLocaleDateString()}
+            </small>
+            <p>{incoming.message}</p>
+            {incoming.attachment?.data && (
+              <a href={incoming.attachment.data} target="_blank" rel="noreferrer">
+                {incoming.attachment.name || "View attachment"}
+              </a>
+            )}
+            <button
+              className="school-notice-popup-action"
+              onClick={() => {
+                markRead(incoming);
+                setIncoming(null);
+              }}
+            >
+              View notice
+            </button>
+          </section>
         </div>
       )}
     </section>
@@ -2860,6 +3085,7 @@ function AdminField({
   type = "text",
   required = false,
   minLength,
+  helperText,
 }) {
   return (
     <label className="admin-field">
@@ -2871,6 +3097,7 @@ function AdminField({
         minLength={minLength}
         onChange={(e) => onChange(e.target.value)}
       />
+      {helperText && <small className="admin-field-hint">{helperText}</small>}
     </label>
   );
 }
@@ -2959,6 +3186,8 @@ function LoginScreen({
   center,
   setCenter,
   centers,
+  schoolEmail,
+  setSchoolEmail,
   onSubmit,
   busy,
   error,
@@ -3043,24 +3272,39 @@ function LoginScreen({
                 </div>
               </label>
             ) : (
-              <label>
-                Select your school
-                <div className="login-input-wrap">
-                  <Home size={17} />
-                  <select
-                    required
-                    value={center}
-                    onChange={(e) => setCenter(e.target.value)}
-                  >
-                    <option value="">Choose a registered school</option>
-                    {centers.map((c) => (
-                      <option key={c._id} value={c._id}>
-                        {c.name}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </label>
+              <>
+                <label>
+                  Select your school
+                  <div className="login-input-wrap">
+                    <Home size={17} />
+                    <select
+                      required
+                      value={center}
+                      onChange={(e) => setCenter(e.target.value)}
+                    >
+                      <option value="">Choose a registered school</option>
+                      {centers.map((c) => (
+                        <option key={c._id} value={c._id}>
+                          {c.name}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </label>
+                <label>
+                  Account email <small>(needed for your personal password)</small>
+                  <div className="login-input-wrap">
+                    <UserRound size={17} />
+                    <input
+                      type="email"
+                      autoComplete="username"
+                      value={schoolEmail}
+                      onChange={(e) => setSchoolEmail(e.target.value)}
+                      placeholder="Enter your account email"
+                    />
+                  </div>
+                </label>
+              </>
             )}
             <label>
               Password

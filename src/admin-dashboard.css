@@ -2476,6 +2476,117 @@
   }
 }
 
+.app-shell .password-change-card {
+  max-width: 680px;
+  padding: 28px;
+  border: 1px solid #e0e9de;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 10px 28px #243c2c0c;
+}
+
+.app-shell .password-change-card h2 {
+  margin: 6px 0;
+  color: #2c4a37;
+  font-size: 24px;
+}
+
+.app-shell .password-change-card > p {
+  margin: 0 0 22px;
+  color: #718075;
+  font-size: 14px;
+}
+
+.app-shell .password-change-form {
+  display: grid;
+  gap: 14px;
+  max-width: 480px;
+}
+
+.app-shell .password-change-form label {
+  display: grid;
+  gap: 7px;
+  color: #435648;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.app-shell .password-change-form input {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid #dce5da;
+  border-radius: 10px;
+  background: #fcfdfb;
+  color: #263a2d;
+  font: inherit;
+}
+
+.app-shell .password-change-form input:focus {
+  border-color: #80a983;
+  outline: 3px solid #80a98326;
+}
+
+.app-shell .password-change-hint {
+  color: #738276;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.app-shell .password-change-error,
+.app-shell .password-change-success {
+  padding: 10px 12px;
+  border-radius: 9px;
+  font-size: 13px;
+}
+
+.app-shell .password-change-error {
+  background: #fff0ed;
+  color: #a54235;
+}
+
+.app-shell .password-change-success {
+  background: #edf7ec;
+  color: #3d7145;
+}
+
+.app-shell .password-change-submit {
+  justify-self: start;
+  min-height: 43px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 10px;
+  background: #39734b;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.app-shell .password-change-submit:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.app-shell.dark-mode .password-change-card {
+  background: #1d3027;
+  border-color: #34483e;
+  color: #e4ece4;
+}
+
+.app-shell.dark-mode .password-change-card h2,
+.app-shell.dark-mode .password-change-form label {
+  color: #e4ece4;
+}
+
+.app-shell.dark-mode .password-change-form input {
+  background: #17271f;
+  border-color: #405648;
+  color: #e4ece4;
+}
+
+@media (max-width: 600px) {
+  .app-shell .password-change-card { padding: 21px; }
+}
+
 .admin-role.dark-mode .calendar-day-detail,
 .admin-role.dark-mode .notice-form input:not([type="radio"]):not([type="file"]),
 .admin-role.dark-mode .notice-form textarea,
@@ -3344,4 +3455,268 @@
 
 .admin-role.dark-mode .meal-report-bars {
   border-color: #34483e;
+}
+
+.app-shell:not(.admin-role) .school-notices-panel {
+  padding: 22px 24px;
+  border-color: #dce8dc;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #fff 0%, #f7fbf7 100%);
+  box-shadow: 0 12px 30px #34543012;
+}
+
+.app-shell:not(.admin-role) .school-notices-panel .card-heading {
+  margin-bottom: 16px;
+}
+
+.app-shell:not(.admin-role) .school-notices-panel h2 {
+  margin-top: 4px;
+  color: #284936;
+  font-size: 21px;
+}
+
+.app-shell:not(.admin-role) .school-notice-heading-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #45604e;
+}
+
+.app-shell:not(.admin-role) .school-notice-unread-label {
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: #eaf4e9;
+  color: #39714a;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.app-shell:not(.admin-role) .school-notice-row {
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 9px;
+  padding: 13px 14px;
+  border: 1px solid #e7eee5;
+  border-radius: 13px;
+  background: #fff;
+  transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+
+.app-shell:not(.admin-role) .school-notice-row:hover,
+.app-shell:not(.admin-role) .school-notice-row:focus-visible {
+  border-color: #b9d4b8;
+  box-shadow: 0 5px 14px #34543010;
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.app-shell:not(.admin-role) .school-notice-row > .priority-dot {
+  margin-top: 7px;
+}
+
+.app-shell:not(.admin-role) .school-notice-copy {
+  min-width: 0;
+  flex: 1;
+}
+
+.app-shell:not(.admin-role) .school-notice-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.app-shell:not(.admin-role) .school-notice-priority {
+  display: inline-flex;
+  width: fit-content;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #edf5eb;
+  color: #4b754d;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.app-shell:not(.admin-role) .school-notice-priority.important {
+  background: #fff4db;
+  color: #916513;
+}
+
+.app-shell:not(.admin-role) .school-notice-priority.urgent {
+  background: #fff0ed;
+  color: #a54235;
+}
+
+.app-shell:not(.admin-role) .school-notice-meta > small:last-child {
+  color: #758477;
+  font-size: 11px;
+}
+
+.app-shell:not(.admin-role) .school-notice-row b {
+  color: #314c38;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.app-shell:not(.admin-role) .school-notice-row .school-notice-message {
+  display: -webkit-box;
+  margin-top: 4px;
+  color: #68776a;
+  font-size: 12.5px;
+  line-height: 1.5;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.app-shell:not(.admin-role) .school-notice-row.read {
+  opacity: 1;
+  background: #fbfcfa;
+}
+
+.app-shell:not(.admin-role) .school-notice-popup-backdrop {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: #13231880;
+  backdrop-filter: blur(4px);
+}
+
+.app-shell:not(.admin-role) .school-notice-popup {
+  position: relative;
+  width: min(100%, 460px);
+  padding: 28px;
+  border: 1px solid #e1eadf;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 24px 70px #10201540;
+  color: #354b39;
+  animation: school-notice-popup-in 180ms ease-out;
+}
+
+.app-shell:not(.admin-role) .school-notice-popup-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: #f1f5ef;
+  color: #526653;
+  cursor: pointer;
+}
+
+.app-shell:not(.admin-role) .school-notice-popup-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  background: #edf6eb;
+  color: #4c8554;
+}
+
+.app-shell:not(.admin-role) .school-notice-popup h2 {
+  margin: 12px 0 4px;
+  color: #294734;
+  font-size: 21px;
+  line-height: 1.3;
+}
+
+.app-shell:not(.admin-role) .school-notice-popup-date {
+  color: #788679;
+  font-size: 12px;
+}
+
+.app-shell:not(.admin-role) .school-notice-popup p {
+  margin: 16px 0;
+  color: #56675a;
+  font-size: 14px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
+.app-shell:not(.admin-role) .school-notice-popup-action {
+  width: 100%;
+  margin-top: 18px;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 12px;
+  background: #39734b;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.app-shell.dark-mode:not(.admin-role) .school-notices-panel {
+  background: linear-gradient(145deg, #1d3027 0%, #20382b 100%);
+  border-color: #34483e;
+}
+
+.app-shell.dark-mode:not(.admin-role) .school-notices-panel h2,
+.app-shell.dark-mode:not(.admin-role) .school-notice-row b,
+.app-shell.dark-mode:not(.admin-role) .school-notice-popup h2 {
+  color: #e4ece4;
+}
+
+.app-shell.dark-mode:not(.admin-role) .school-notice-row {
+  background: #23382d;
+  border-color: #3b5143;
+}
+
+.app-shell.dark-mode:not(.admin-role) .school-notice-row .school-notice-message,
+.app-shell.dark-mode:not(.admin-role) .school-notice-meta > small:last-child {
+  color: #b4c2b5;
+}
+
+.app-shell.dark-mode:not(.admin-role) .school-notice-popup {
+  background: #1d3027;
+  border-color: #34483e;
+  color: #e4ece4;
+}
+
+@keyframes school-notice-popup-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 600px) {
+  .app-shell:not(.admin-role) .school-notices-panel { padding: 17px; }
+  .app-shell:not(.admin-role) .school-notice-popup { padding: 24px 20px; }
+}
+
+/* Swap the positions of growth tracking and notices on the worker dashboard. */
+.app-shell:not(.admin-role) .school-notices-panel {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.app-shell:not(.admin-role) .growth-card {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+@media (max-width: 760px) {
+  .app-shell:not(.admin-role) .school-notices-panel {
+    grid-column: auto;
+    grid-row: 2;
+  }
+
+  .app-shell:not(.admin-role) .growth-card {
+    grid-column: auto;
+    grid-row: 4;
+  }
+
+  .app-shell:not(.admin-role) .overview-card {
+    grid-column: auto;
+    grid-row: 3;
+  }
 }

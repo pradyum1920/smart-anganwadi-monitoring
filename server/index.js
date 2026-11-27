@@ -24,6 +24,15 @@ import {
 
 const app = express();
 
+const passwordPolicyMessage =
+  "Password must be at least 8 characters and include an uppercase letter, a lowercase letter, and a special character.";
+const meetsPasswordPolicy = (password) =>
+  typeof password === "string" &&
+  password.length >= 8 &&
+  /[A-Z]/.test(password) &&
+  /[a-z]/.test(password) &&
+  /[^A-Za-z0-9\s]/.test(password);
+
 app.use(cors({ origin: process.env.CLIENT_ORIGIN || "http://localhost:5173" }));
 
 app.use(express.json({ limit: "7mb" }));
@@ -810,16 +819,28 @@ app.post(
     if (centerId) {
       const center = await Center.findOne({ _id: centerId, status: "active" });
 
-      if (!center || password !== "123")
+      if (!center)
         return res
           .status(401)
-          .json({ message: "Use password 123 to sign in to this school." });
+          .json({ message: "Select a valid school to sign in." });
 
+      const identity = String(email || "").trim().toLowerCase();
       user = await User.findOne({
         centers: center._id,
         role: { $in: ["worker", "supervisor"] },
         active: true,
+        ...(identity ? { email: identity } : {}),
       }).select("+passwordHash");
+
+      if (identity && !user)
+        return res
+          .status(401)
+          .json({ message: "Email or password is incorrect for this school." });
+
+      if (!identity && password !== "123")
+        return res.status(401).json({
+          message: "Enter your email and password to sign in to this school.",
+        });
 
       if (!user) {
         user = await User.create({
@@ -830,6 +851,11 @@ app.post(
           passwordHash: await bcrypt.hash(center.name, 12),
         });
       }
+
+      if (!identity && user.passwordUpdatedAt)
+        return res.status(401).json({
+          message: "Enter your email and new password to sign in to this school.",
+        });
     } else {
       const identity = String(username || email || "").trim();
 
@@ -860,9 +886,15 @@ app.post(
       String(username || email || "")
         .trim()
         .toLowerCase() === "administration" &&
-      password === "123";
+      password === "123" &&
+      !user?.passwordUpdatedAt;
 
-    const demoSchool = !!centerId && user && password === "123";
+    const demoSchool =
+      !!centerId &&
+      user &&
+      !email &&
+      password === "123" &&
+      !user.passwordUpdatedAt;
 
     if (
       !user ||
@@ -896,6 +928,28 @@ app.post(
 );
 
 app.get("/api/auth/me", auth(), (req, res) => res.json({ user: req.user }));
+
+app.post(
+  "/api/auth/change-password",
+  auth(),
+  asyncRoute(async (req, res) => {
+    const { currentPassword, newPassword } = req.body;
+    if (!currentPassword)
+      return res.status(400).json({ message: "Enter your current password." });
+    if (!meetsPasswordPolicy(newPassword))
+      return res.status(400).json({ message: passwordPolicyMessage });
+
+    const user = await User.findById(req.user._id).select("+passwordHash");
+    if (!user || !(await bcrypt.compare(currentPassword, user.passwordHash)))
+      return res.status(401).json({ message: "Current password is incorrect." });
+
+    user.passwordHash = await bcrypt.hash(newPassword, 12);
+    user.passwordUpdatedAt = new Date();
+    await user.save();
+
+    res.json({ message: "Your password has been changed." });
+  }),
+);
 // First administrator is bootstrapped explicitly from environment variables; public signup is intentionally disabled.
 
 app.post(
@@ -915,10 +969,9 @@ app.post(
 
     const { name, email, password } = req.body;
 
-    if (!name || !email || !password || password.length < 10)
+    if (!name || !email || !meetsPasswordPolicy(password))
       return res.status(400).json({
-        message:
-          "Provide a name, email, and password with at least 10 characters.",
+        message: `Provide a name and email. ${passwordPolicyMessage}`,
       });
 
     const user = await User.create({
@@ -926,6 +979,7 @@ app.post(
       email,
       role: "admin",
       passwordHash: await bcrypt.hash(password, 12),
+      passwordUpdatedAt: new Date(),
     });
 
     res.status(201).json({
@@ -1009,13 +1063,11 @@ app.post(
     if (
       !name ||
       !email ||
-      !password ||
-      password.length < 10 ||
+      !meetsPasswordPolicy(password) ||
       !["worker", "supervisor", "admin"].includes(role)
     )
       return res.status(400).json({
-        message:
-          "Provide name, valid role, email, and a password of at least 10 characters.",
+        message: `Provide a name, valid role, and email. ${passwordPolicyMessage}`,
       });
 
     const user = await User.create({
@@ -1024,6 +1076,7 @@ app.post(
       role,
       centers,
       passwordHash: await bcrypt.hash(password, 12),
+      passwordUpdatedAt: new Date(),
     });
 
     res.status(201).json(await User.findById(user.id).select("-passwordHash"));
@@ -1037,7 +1090,11 @@ app.patch(
     const updates = { ...req.body };
 
     if (updates.password) {
+      if (!meetsPasswordPolicy(updates.password))
+        return res.status(400).json({ message: passwordPolicyMessage });
+
       updates.passwordHash = await bcrypt.hash(updates.password, 12);
+      updates.passwordUpdatedAt = new Date();
       delete updates.password;
     }
 
