@@ -1,5 +1,7 @@
 import "dotenv/config";
 import express from "express";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import mongoose from "mongoose";
 import cors from "cors";
 import bcrypt from "bcryptjs";
@@ -24,6 +26,8 @@ import {
 
 
 const app = express();
+const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const frontendDist = path.join(projectRoot, "dist");
 
 const passwordPolicyMessage =
   "Password must be at least 8 characters and include an uppercase letter, a lowercase letter, and a special character.";
@@ -2045,6 +2049,15 @@ app.get(
     });
   }),
 );
+
+app.use(express.static(frontendDist));
+
+app.get("*", (req, res, next) => {
+  if (req.path === "/api" || req.path.startsWith("/api/")) return next();
+  res.sendFile(path.join(frontendDist, "index.html"), (error) => {
+    if (error) next(error);
+  });
+});
 
 app.use((req, res) =>
   res.status(404).json({ message: "API route not found." }),

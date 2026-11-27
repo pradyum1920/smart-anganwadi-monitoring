@@ -34,6 +34,10 @@ The Vite frontend and Express API are both deployed from this project. Vercel se
 
 Redeploy after setting the variables. Check `/api/health` on the deployed domain; it should return `{"status":"ok","database":"connected"}`. If it reports a database error, check the Atlas network access list and the `MONGODB_URI` value. Create the first administrator using the bootstrap endpoint and `ADMIN_BOOTSTRAP_KEY`; do not use local demo credentials unless you separately seeded a production database.
 
+## Deploy to Render
+
+Create a **Web Service** from this repository with the root directory left blank. Set the build command to `npm install && npm run build` and the start command to `npm start`. Add `MONGODB_URI`, `JWT_SECRET`, and `ADMIN_BOOTSTRAP_KEY` as Render environment variables. The Express service serves the built frontend and API from the same Render URL.
+
 ## Sample dashboard data
 
 Run `npm run seed` to add 10 sample schools, 1,700 children, 154 Anganwadi workers, 20 supervisors, and example attendance, meal, growth, and upcoming activity records. The seeder does not overwrite existing records and skips repeat runs after the sample schools have been created.
