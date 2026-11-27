@@ -22,6 +22,7 @@ import {
   AcademicProgress,
 } from "../database/models.js";
 
+
 const app = express();
 
 const passwordPolicyMessage =
@@ -825,24 +826,41 @@ app.post(
           .json({ message: "Select a valid school to sign in." });
 
       const identity = String(email || "").trim().toLowerCase();
-      user = await User.findOne({
+      const schoolUsers = await User.find({
         centers: center._id,
         role: { $in: ["worker", "supervisor"] },
         active: true,
         ...(identity ? { email: identity } : {}),
       }).select("+passwordHash");
 
-      if (identity && !user)
-        return res
-          .status(401)
-          .json({ message: "Email or password is incorrect for this school." });
+      if (identity) {
+        user = schoolUsers[0];
+      } else {
+        user = schoolUsers.find(
+          (candidate) => password === "123" && !candidate.passwordUpdatedAt,
+        );
 
-      if (!identity && password !== "123")
+        if (!user) {
+          for (const candidate of schoolUsers) {
+            if (await bcrypt.compare(password || "", candidate.passwordHash)) {
+              user = candidate;
+              break;
+            }
+          }
+        }
+      }
+
+      if (!user && identity)
         return res.status(401).json({
-          message: "Enter your email and password to sign in to this school.",
+          message: "Email or password is incorrect for this school.",
         });
 
-      if (!user) {
+      if (!user && !identity && password !== "123")
+        return res.status(401).json({
+          message: "Password is incorrect for this school.",
+        });
+
+      if (!user && !identity) {
         user = await User.create({
           name: center.name,
           email: `school-${center.centerId}@anganwadi.local`,
@@ -852,10 +870,6 @@ app.post(
         });
       }
 
-      if (!identity && user.passwordUpdatedAt)
-        return res.status(401).json({
-          message: "Enter your email and new password to sign in to this school.",
-        });
     } else {
       const identity = String(username || email || "").trim();
 
