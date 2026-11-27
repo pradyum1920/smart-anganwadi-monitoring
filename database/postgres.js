@@ -199,9 +199,9 @@ function comparisonExpression(field, operator, value, bind) {
   const date = value instanceof Date;
   const comparison = { $gt: ">", $gte: ">=", $lt: "<", $lte: "<=" }[operator];
   const parameter = bind(numeric || date ? (date ? value.toISOString() : String(value)) : String(value));
-  if (numeric) return `${expression}::numeric ${comparison} ${parameter}::numeric`;
+  if (numeric) return `(${expression})::numeric ${comparison} ${parameter}::numeric`;
   if (date || /^(?:\d{4}-\d\d-\d\d|\d{4}-\d\d-\d\dT)/.test(String(value)))
-    return `${expression}::timestamptz ${comparison} ${parameter}::timestamptz`;
+    return `(${expression})::timestamptz ${comparison} ${parameter}::timestamptz`;
   return `${expression} ${comparison} ${parameter}`;
 }
 
