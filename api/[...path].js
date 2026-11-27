@@ -1,4 +1,4 @@
-import { app, connectDatabase } from "../server/index.js";
+import { app, connectDatabase } from "../backend/index.js";
 
 export default async function handler(req, res) {
   try {

@@ -20,7 +20,7 @@ import {
   CalendarEvent,
   Fund,
   AcademicProgress,
-} from "./models.js";
+} from "../database/models.js";
 
 const app = express();
 

@@ -2,6 +2,13 @@
 
 Responsive React and Express application for Anganwadi center operations. The worker dashboard follows the supplied mobile reference. Attendance and child growth measurements in the dashboard save through the API; other modules expose their REST endpoints for the next UI screens.
 
+## Project folders
+
+- `frontend/` contains the React/Vite app and static assets.
+- `backend/` contains the Express API.
+- `database/` contains the Mongoose models and sample data seeder.
+- `api/` contains the Vercel function entry point that forwards `/api/*` requests to Express.
+
 ## Requirements
 
 - Node.js 20 or newer
