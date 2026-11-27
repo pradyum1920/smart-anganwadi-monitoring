@@ -50,7 +50,7 @@ $body = @{ name = 'System Administrator'; email = 'admin@example.org'; password 
 Invoke-RestMethod -Method Post -Uri http://localhost:5000/api/auth/bootstrap-admin -Headers $headers -ContentType 'application/json' -Body $body
 ```
 
-Sign in through the app with that email and password. In the administrator sidebar, create a center first, then open **Users** to create worker and supervisor accounts and assign each account to a center. Give each user their temporary password; they select their school and enter that password to sign in.
+Sign in through the app with that email and password. In the administrator sidebar, create a center first, then open **Users** to create worker and supervisor accounts and assign each account to a center. Give each user their email and temporary password so they can sign in through the same login page.
 
 ## API overview
 

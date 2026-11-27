@@ -112,6 +112,7 @@ function App() {
   const [authBusy, setAuthBusy] = useState(false);
   const [authError, setAuthError] = useState("");
   const [loginEmail, setLoginEmail] = useState("administration");
+  const [loginSchoolEmail, setLoginSchoolEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [loginRole, setLoginRole] = useState("admin");
   const [loginCenter, setLoginCenter] = useState("");
@@ -340,6 +341,7 @@ function App() {
             ? { username: loginEmail, password: loginPassword }
             : {
                 centerId: loginCenter,
+                email: loginSchoolEmail,
                 password: loginPassword,
               },
         ),
@@ -537,6 +539,8 @@ function App() {
         center={loginCenter}
         setCenter={setLoginCenter}
         centers={loginCenters}
+        schoolEmail={loginSchoolEmail}
+        setSchoolEmail={setLoginSchoolEmail}
         onSubmit={login}
         busy={authBusy}
         error={authError}
@@ -3182,6 +3186,8 @@ function LoginScreen({
   center,
   setCenter,
   centers,
+  schoolEmail,
+  setSchoolEmail,
   onSubmit,
   busy,
   error,
@@ -3283,6 +3289,19 @@ function LoginScreen({
                         </option>
                       ))}
                     </select>
+                  </div>
+                </label>
+                <label>
+                  Account email <small>(needed for your personal password)</small>
+                  <div className="login-input-wrap">
+                    <UserRound size={17} />
+                    <input
+                      type="email"
+                      autoComplete="username"
+                      value={schoolEmail}
+                      onChange={(e) => setSchoolEmail(e.target.value)}
+                      placeholder="Enter your account email"
+                    />
                   </div>
                 </label>
               </>
