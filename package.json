@@ -1,0 +1,31 @@
+{
+  "name": "smart-anganwadi-monitoring",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "server": "node server/index.js",
+    "seed": "node server/seed.js",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start:local": "concurrently --kill-others-on-fail --prefix-colors \"bgBlue.bold,bgGreen.bold\" --names \"SERVER,CLIENT\" \"npm run server\" \"npm run dev\""
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.108.0",
+    "@vitejs/plugin-react": "latest",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.468.0",
+    "mongoose": "^8.9.5",
+    "react": "latest",
+    "react-dom": "latest",
+    "vite": "latest"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.7"
+  }
+}

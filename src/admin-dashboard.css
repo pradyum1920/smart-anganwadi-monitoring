@@ -1,0 +1,3347 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+.admin-role {
+  font-family: "Poppins", "DM Sans", sans-serif;
+  background: #f4faf2;
+  color: #1f2a1f;
+}
+
+.admin-role .sidebar {
+  background: #fff;
+  color: #405545;
+  border-right: 1px solid #e8eee5;
+  box-shadow: 2px 0 12px #29412a08;
+  padding: 23px 16px;
+}
+
+.admin-role .brand {
+  margin-bottom: 32px;
+  color: #253c2d;
+}
+
+.admin-role .brand small,
+.admin-role .side-bottom small {
+  color: #8a948a;
+}
+
+.admin-role .center-chip {
+  background: #f4f8f2;
+  border-color: #e6eee2;
+  color: #536652;
+}
+
+.admin-role .side-label {
+  color: #a1aaa0;
+}
+
+.admin-role .side-link {
+  color: #6c7c6d;
+  border-radius: 9px;
+}
+
+.admin-role .side-link.selected,
+.admin-role .side-link:hover {
+  background: #e9f7e4;
+  color: #3e6b35;
+  box-shadow: inset 3px 0 #86cf70;
+}
+
+.admin-role .side-bottom {
+  border-color: #e8eee5;
+}
+
+.admin-role .main {
+  background: #f4faf2;
+}
+
+.admin-role .topbar {
+  background: #f9fcf8;
+  border-color: #e8eee5;
+}
+
+.admin-role .content {
+  max-width: 1500px;
+  padding-top: 26px;
+}
+
+.admin-role h1,
+.admin-role h2 {
+  font-family: "Poppins", "DM Sans", sans-serif;
+}
+
+.admin-role h1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #1f2a1f;
+}
+
+.admin-role .subheading {
+  font-size: 13.5px;
+  color: #819081;
+}
+
+.admin-role .eyebrow {
+  font-family: "Poppins", "DM Sans", sans-serif;
+  letter-spacing: 0.8px;
+  color: #8a948a;
+}
+
+.admin-role .stats {
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.admin-role .stat-card {
+  border: 0;
+  border-radius: 17px;
+  background: #fff;
+  box-shadow: 0 5px 18px #3454300c;
+  padding: 16px 18px;
+  min-height: 118px;
+}
+
+.admin-role .stat-card .eyebrow {
+  font-size: 12px;
+  line-height: 1.45;
+  min-height: 26px;
+}
+
+.admin-role .stat-icon {
+  background: #eaf5e6;
+  border-radius: 10px;
+  color: #3e6b35;
+}
+
+.admin-role .stat-value {
+  font-family: "Poppins", "DM Sans", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  color: #1f2a1f;
+}
+
+.admin-role .stat-value small {
+  font-family: "Poppins", "DM Sans", sans-serif;
+  font-size: 12px;
+  color: #879188;
+}
+
+.admin-role .stat-card.dark-stat {
+  background: #3e6b35;
+  color: #fff;
+}
+
+.admin-role .stat-card.dark-stat .eyebrow,
+.admin-role .stat-card.dark-stat .stat-value,
+.admin-role .stat-card.dark-stat .stat-value small {
+  color: #fff;
+}
+
+.admin-role .stat-card.dark-stat .stat-icon {
+  background: #ffffff20;
+  color: #fff;
+}
+
+.admin-role .admin-searchbar {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: min(100%, 440px);
+  padding: 0 8px 0 14px;
+  margin: 0 0 16px auto;
+  border: 1px solid #e6eee2;
+  border-radius: 12px;
+  background: #fff;
+  color: #8a948a;
+}
+
+.admin-role .admin-searchbar input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font:
+    13.5px "Poppins",
+    sans-serif;
+  color: #1f2a1f;
+}
+
+.admin-role .admin-searchbar button {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 8px;
+  background: #86cf70;
+  color: #315d2c;
+}
+
+.admin-role .admin-home-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(260px, 0.92fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.admin-role .admin-home-main {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.admin-role .admin-home-rail {
+  display: grid;
+  gap: 16px;
+}
+
+.admin-role .admin-home-grid .card {
+  padding: 18px;
+  border: 1px solid #eef2eb;
+  border-radius: 17px;
+  background: #fff;
+  box-shadow: 0 5px 18px #3454300a;
+  min-width: 0;
+}
+
+.admin-role .admin-home-grid .card-heading {
+  margin-bottom: 12px;
+}
+
+.admin-role .admin-home-grid .card-heading h2,
+.admin-role .calendar-head h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #253526;
+}
+
+.admin-role .month-tag {
+  border: 0;
+  background: #f5f8f3;
+  font-size: 12px;
+}
+
+.admin-role .donut-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 14px;
+  min-height: 190px;
+}
+
+.admin-role .student-donut {
+  width: 150px;
+  height: 150px;
+  flex: 0 0 150px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.admin-role .student-donut:before {
+  content: "";
+  position: absolute;
+  inset: 24px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.admin-role .student-donut > div {
+  z-index: 1;
+  display: grid;
+  text-align: center;
+  gap: 2px;
+}
+
+.admin-role .student-donut small {
+  font-size: 12.5px;
+  color: #8a948a;
+}
+
+.admin-role .student-donut strong {
+  font-size: 20px;
+  color: #1f2a1f;
+}
+
+.admin-role .donut-legend {
+  display: grid;
+  gap: 15px;
+  font-size: 12.5px;
+  color: #829082;
+}
+
+.admin-role .donut-legend span {
+  display: grid;
+  grid-template-columns: 9px auto auto;
+  align-items: center;
+  gap: 6px;
+}
+
+.admin-role .donut-legend b {
+  grid-column: 2/4;
+  color: #29382a;
+  font-size: 13.5px;
+}
+
+.admin-role .girl-dot,
+.admin-role .boy-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #86cf70;
+  display: inline-block;
+}
+
+.admin-role .boy-dot {
+  background: #3e6b35;
+}
+
+.admin-role .chart-legend {
+  display: flex;
+  gap: 13px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #8a948a;
+}
+
+.admin-role .chart-legend span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.admin-role .chart-legend .girl-dot,
+.admin-role .chart-legend .boy-dot {
+  width: 7px;
+  height: 7px;
+}
+
+.admin-role .school-attendance-bars {
+  height: 163px;
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  padding: 8px 6px 0;
+  border-bottom: 1px solid #e9eee6;
+}
+
+.admin-role .school-day {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+  min-width: 0;
+}
+
+.admin-role .school-bar {
+  width: min(25px, 78%);
+  height: calc(100% - 22px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  border-radius: 8px 8px 4px 4px;
+  background: #f0f3ed;
+}
+
+.admin-role .school-bar i {
+  display: block;
+  min-height: 0;
+  background: #86cf70;
+}
+
+.admin-role .school-bar b {
+  display: block;
+  min-height: 0;
+  background: #3e6b35;
+}
+
+.admin-role .school-day small {
+  font-size: 12px;
+  color: #89948a;
+}
+
+.admin-role .attendance-card-note {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 12px;
+  color: #768676;
+}
+
+.admin-role .attendance-card-note svg {
+  color: #69ad5b;
+}
+
+.admin-role .meal-summary-card > svg,
+.admin-role .growth-report-card > svg {
+  color: #4e8044;
+}
+
+.admin-role .meal-kpi {
+  font-size: 30px;
+  font-weight: 600;
+  color: #3e6b35;
+  margin: 16px 0 4px;
+}
+
+.admin-role .meal-kpi small {
+  font-size: 12.5px;
+  font-weight: 400;
+  color: #839083;
+}
+
+.admin-role .meal-summary-card p,
+.admin-role .growth-report-card p {
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #849084;
+  margin-top: 7px;
+}
+
+.admin-role .growth-date {
+  color: #3e6b35;
+  background: #f1f8ee;
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 16px;
+}
+
+.admin-role .growth-date strong {
+  font-size: 15px;
+}
+
+.admin-role .calendar-card {
+  padding: 17px !important;
+}
+
+.admin-role .calendar-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.admin-role .calendar-head button {
+  width: 27px;
+  height: 27px;
+  border: 1px solid #e9eee6;
+  border-radius: 8px;
+  background: #fff;
+  color: #728072;
+  font-size: 19px;
+  line-height: 1;
+}
+
+.admin-role .calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  text-align: center;
+}
+
+.admin-role .calendar-grid b {
+  padding: 5px 0;
+  color: #9aa399;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.admin-role .calendar-grid span,
+.admin-role .calendar-grid i {
+  height: 29px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-style: normal;
+  color: #677568;
+}
+
+.admin-role .calendar-grid span.today {
+  background: #86cf70;
+  color: #1f3b20;
+  font-weight: 700;
+}
+
+.admin-role .upcoming-card .card-heading > svg {
+  color: #57824e;
+}
+
+.admin-role .upcoming-event {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-top: 1px solid #eef2eb;
+}
+
+.admin-role .event-date {
+  background: #e9f7e4;
+  color: #3e6b35;
+  padding: 6px 7px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.admin-role .upcoming-event b,
+.admin-role .upcoming-event small {
+  display: block;
+}
+
+.admin-role .upcoming-event b {
+  font-size: 12.5px;
+  color: #344334;
+}
+
+.admin-role .upcoming-event small {
+  font-size: 12px;
+  color: #8a948a;
+  margin-top: 3px;
+}
+
+.admin-role .empty-activities {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 16px 8px;
+  color: #8a948a;
+  font-size: 12.5px;
+  background: #f7faf5;
+  border-radius: 10px;
+}
+
+.admin-role .page-footer {
+  color: #8a948a;
+}
+
+.admin-role.dark-mode .sidebar,
+.admin-role.dark-mode .topbar {
+  background: #192a22;
+  border-color: #34483e;
+  color: #e4ece4;
+}
+
+.admin-role.dark-mode .center-chip,
+.admin-role.dark-mode .admin-searchbar,
+.admin-role.dark-mode .admin-home-grid .card {
+  background: #1d3027;
+  border-color: #34483e;
+  color: #e4ece4;
+}
+
+.admin-role.dark-mode .admin-searchbar input {
+  color: #e4ece4;
+}
+
+.admin-role.dark-mode .admin-home-grid .card-heading h2,
+.admin-role.dark-mode .calendar-head h2,
+.admin-role.dark-mode .student-donut strong,
+.admin-role.dark-mode .donut-legend b,
+.admin-role.dark-mode .upcoming-event b {
+  color: #e4ece4;
+}
+
+.admin-role.dark-mode .student-donut:before {
+  background: #1d3027;
+}
+
+.admin-role.dark-mode .calendar-head button {
+  background: #1d3027;
+  color: #e4ece4;
+  border-color: #34483e;
+}
+
+.admin-role.dark-mode .upcoming-event {
+  border-color: #34483e;
+}
+
+.admin-role .admin-filter-link {
+  display: flex;
+  justify-content: flex-end;
+  margin: -8px 0 12px;
+  color: #758575;
+  font-size: 12.5px;
+}
+
+.admin-role .admin-filter-link label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.admin-role .admin-filter-link input {
+  accent-color: #3e6b35;
+}
+
+.admin-role .admin-card-controls {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.admin-role .admin-card-controls > select,
+.admin-role .school-combobox input,
+.admin-role .custom-date-controls input {
+  height: 30px;
+  max-width: 160px;
+  padding: 0 9px;
+  border: 1px solid #e6eee2;
+  border-radius: 8px;
+  background: #f8faf6;
+  color: #566656;
+  font:
+    12.5px "Poppins",
+    sans-serif;
+  outline-color: #86cf70;
+}
+
+.admin-role .school-combobox {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.admin-role .school-combobox > svg {
+  position: absolute;
+  right: 8px;
+  pointer-events: none;
+  color: #809080;
+}
+
+.admin-role .school-combobox input {
+  width: 160px;
+  padding-right: 25px;
+  text-overflow: ellipsis;
+}
+
+.admin-role .school-options {
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  right: 0;
+  top: 34px;
+  max-height: 210px;
+  overflow: auto;
+  padding: 4px;
+  border: 1px solid #e6eee2;
+  border-radius: 9px;
+  background: #fff;
+  box-shadow: 0 8px 22px #263b251c;
+}
+
+.admin-role .school-options button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  text-align: left;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #405545;
+  font:
+    12.5px "Poppins",
+    sans-serif;
+  cursor: pointer;
+}
+
+.admin-role .school-options button:hover {
+  background: #e9f7e4;
+}
+
+.admin-role .selected-school-subtitle {
+  margin: -7px 0 6px;
+  color: #899589;
+  font-size: 12px;
+}
+
+.admin-role .view-students-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 auto;
+  color: #4e8044;
+  font-size: 12.5px;
+}
+
+.admin-role .view-students-link:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.admin-role .dashboard-empty,
+.admin-role .dashboard-skeleton {
+  min-height: 190px;
+  display: grid;
+  place-items: center;
+  color: #899589;
+  font-size: 13px;
+}
+
+.admin-role .dashboard-skeleton {
+  background: linear-gradient(90deg, #f2f5ef 25%, #e7eee3 45%, #f2f5ef 65%);
+  background-size: 250% 100%;
+  animation: admin-skeleton 1.25s linear infinite;
+  border-radius: 12px;
+}
+
+@keyframes admin-skeleton {
+  to {
+    background-position: -250% 0;
+  }
+}
+
+.admin-role .chart-skeleton {
+  min-height: 180px;
+}
+
+.admin-role .no-data-day .school-bar,
+.admin-role .no-data-fill {
+  background: #e5e9e3 !important;
+}
+
+.admin-role .holiday-day .school-bar {
+  background: #eff1ee !important;
+}
+
+.admin-role .school-bar .no-data-fill {
+  height: 100%;
+  width: 100%;
+  min-height: 0;
+}
+
+.admin-role .attendance-card-note {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.admin-role .not-recorded-badge {
+  padding: 4px 7px;
+  border-radius: 12px;
+  background: #fff2d6;
+  color: #9b6a12;
+  font-size: 12px;
+}
+
+.admin-role .csv-button {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #e6eee2;
+  border-radius: 8px;
+  background: #f8faf6;
+  color: #4e7048;
+  cursor: pointer;
+}
+
+.admin-role .custom-date-controls {
+  display: flex;
+  gap: 10px;
+  margin: 2px 0 10px;
+}
+
+.admin-role .custom-date-controls label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #788678;
+  font-size: 12px;
+}
+
+.admin-role .custom-date-controls input {
+  max-width: 140px;
+}
+
+.admin-role.dark-mode .admin-card-controls > select,
+.admin-role.dark-mode .school-combobox input,
+.admin-role.dark-mode .custom-date-controls input,
+.admin-role.dark-mode .csv-button {
+  background: #1d3027;
+  border-color: #34483e;
+  color: #e4ece4;
+}
+
+.admin-role.dark-mode .school-options {
+  background: #1d3027;
+  border-color: #34483e;
+}
+
+.admin-role.dark-mode .school-options button {
+  color: #e4ece4;
+}
+
+.admin-role.dark-mode .dashboard-skeleton {
+  background: linear-gradient(90deg, #26392f 25%, #34483e 45%, #26392f 65%);
+  background-size: 250% 100%;
+}
+
+.admin-role .admin-dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+.admin-role .admin-dashboard-cards > .card {
+  min-height: 550px;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-role .admin-dashboard-cards .card-heading {
+  align-items: center;
+}
+
+.admin-role .admin-dashboard-cards .notice-card {
+  min-width: 0;
+}
+
+.admin-role .admin-dashboard-cards .calendar-card {
+  padding: 18px;
+}
+
+.admin-role .calendar-weekdays,
+.admin-role .calendar-dates {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 5px;
+  text-align: center;
+}
+
+.admin-role .calendar-grid {
+  display: block;
+}
+
+.admin-role .calendar-weekdays b {
+  padding: 5px 0;
+  color: #98a298;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.admin-role .calendar-dates button,
+.admin-role .calendar-dates i {
+  height: 32px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: #596b59;
+  font:
+    12.5px "Poppins",
+    sans-serif;
+  font-style: normal;
+}
+
+.admin-role .calendar-dates button {
+  cursor: pointer;
+}
+
+.admin-role .calendar-dates button:hover,
+.admin-role .calendar-dates button.chosen {
+  background: #eef5e9;
+}
+
+.admin-role .calendar-dates button.today {
+  background: #dff2d8;
+  color: #2d5d30;
+  font-weight: 700;
+}
+
+.admin-role .calendar-event-dot {
+  position: absolute;
+  bottom: 3px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #e5a83d;
+}
+
+.admin-role .calendar-day-detail {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 11px;
+  background: #f8faf6;
+  min-height: 105px;
+  color: #536653;
+  font-size: 12.5px;
+}
+
+.admin-role .calendar-day-detail > b {
+  display: block;
+  margin-bottom: 8px;
+  color: #344734;
+  font-size: 13px;
+}
+
+.admin-role .calendar-event-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 0;
+  border-top: 1px solid #e9eee6;
+}
+
+.admin-role .calendar-event-row > span {
+  color: #57824e;
+}
+
+.admin-role .calendar-event-row strong,
+.admin-role .calendar-event-row small {
+  display: block;
+}
+
+.admin-role .calendar-event-row strong {
+  font-size: 12.5px;
+}
+
+.admin-role .calendar-event-row small {
+  margin-top: 2px;
+  color: #8a948a;
+  font-size: 12px;
+}
+
+.admin-role .calendar-add-link {
+  margin-top: 8px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #4e8044;
+  font:
+    12.5px "Poppins",
+    sans-serif;
+  cursor: pointer;
+}
+
+.admin-role .calendar-event-form {
+  display: grid;
+  gap: 7px;
+  margin-top: 9px;
+}
+
+.admin-role .calendar-event-form input,
+.admin-role .calendar-event-form select {
+  min-width: 0;
+  height: 31px;
+  padding: 0 8px;
+  border: 1px solid #e5ece1;
+  border-radius: 7px;
+  background: white;
+  color: #405545;
+  font:
+    12.5px "Poppins",
+    sans-serif;
+}
+
+.admin-role .calendar-event-form select[multiple] {
+  height: 66px;
+  padding: 5px;
+}
+
+.admin-role .calendar-event-form .primary-button {
+  width: 100%;
+  justify-content: center;
+  min-height: 33px;
+}
+
+.admin-role .notice-form {
+  display: grid;
+  gap: 8px;
+}
+
+.admin-role .notice-form > label {
+  display: grid;
+  gap: 4px;
+  color: #718071;
+  font-size: 12px;
+}
+
+.admin-role .notice-form input:not([type="radio"]):not([type="file"]),
+.admin-role .notice-form textarea,
+.admin-role .notice-form select,
+.admin-role .notice-school-multi {
+  width: 100%;
+  min-width: 0;
+  padding: 8px 9px;
+  border: 1px solid #e6eee2;
+  border-radius: 8px;
+  background: #fbfcfa;
+  color: #354835;
+  font:
+    12.5px "Poppins",
+    sans-serif;
+  outline-color: #86cf70;
+}
+
+.admin-role .notice-form textarea {
+  height: 76px;
+  resize: vertical;
+  padding-bottom: 20px;
+}
+
+.admin-role .notice-form label:has(textarea) {
+  position: relative;
+}
+
+.admin-role .character-count {
+  position: absolute;
+  right: 8px;
+  bottom: 5px;
+  color: #9ba49a;
+  font-size: 11px;
+}
+
+.admin-role .notice-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 8px;
+}
+
+.admin-role .notice-form-row label {
+  display: grid;
+  gap: 4px;
+  color: #718071;
+  font-size: 12px;
+}
+
+.admin-role .notice-school-multi {
+  height: 66px;
+}
+
+.admin-role .notice-attachment {
+  display: flex !important;
+  align-items: center;
+  gap: 5px !important;
+  padding: 7px 8px;
+  border: 1px dashed #d8e2d3;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.admin-role .notice-attachment input {
+  max-width: 120px;
+  color: #839083;
+  font-size: 11px;
+}
+
+.admin-role .notice-attachment small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-role .notice-schedule {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  color: #788678;
+  font-size: 12px;
+}
+
+.admin-role .notice-schedule label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.admin-role .notice-schedule input[type="radio"] {
+  accent-color: #3e6b35;
+}
+
+.admin-role .notice-schedule input[type="datetime-local"] {
+  max-width: 170px;
+  height: 28px;
+  padding: 3px;
+  border: 1px solid #e5ece1;
+  border-radius: 7px;
+  font:
+    12px "Poppins",
+    sans-serif;
+}
+
+.admin-role .notice-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+  min-height: 37px;
+  border: 0;
+  border-radius: 9px;
+  background: #1f4334;
+  color: white;
+  font:
+    500 12.5px "Poppins",
+    sans-serif;
+  cursor: pointer;
+}
+
+.admin-role .notice-error {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #a94438;
+  font-size: 12px;
+}
+
+.admin-role .inline-success {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 7px;
+  color: #477842;
+  font-size: 12px;
+}
+
+.admin-role .recent-notices {
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.admin-role .mini-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  color: #516351;
+  font-size: 12.5px;
+}
+
+.admin-role .mini-section-head small {
+  color: #9aa399;
+  font-size: 11px;
+}
+
+.admin-role .recent-notice-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 3px 7px;
+  width: 100%;
+  padding: 8px 0;
+  text-align: left;
+  border: 0;
+  border-top: 1px solid #eef2eb;
+  background: transparent;
+  cursor: pointer;
+}
+
+.admin-role .recent-notice-row > span:first-child {
+  min-width: 0;
+}
+
+.admin-role .recent-notice-row b,
+.admin-role .recent-notice-row span small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-role .recent-notice-row b {
+  color: #3c4e3e;
+  font-size: 12px;
+}
+
+.admin-role .recent-notice-row span small,
+.admin-role .recent-notice-row > small {
+  color: #899589;
+  font-size: 11px;
+}
+
+.admin-role .recent-notice-row > small {
+  grid-column: 1/-1;
+}
+
+.admin-role .priority-chip {
+  width: max-content;
+  padding: 3px 6px;
+  border-radius: 9px;
+  background: #edf2e9;
+  color: #718071;
+  font-size: 11px;
+  text-transform: capitalize;
+}
+
+.admin-role .priority-chip.important {
+  background: #fff1d8;
+  color: #987023;
+}
+
+.admin-role .priority-chip.urgent {
+  background: #ffebe7;
+  color: #a34336;
+}
+
+.admin-role .notice-empty {
+  padding: 12px 0;
+  color: #909a90;
+  font-size: 12px;
+}
+
+.admin-role .notice-detail-backdrop {
+  position: fixed;
+  z-index: 20;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: #15291d65;
+}
+
+.admin-role .notice-detail {
+  position: relative;
+  width: min(480px, 100%);
+  max-height: 85vh;
+  overflow: auto;
+  padding: 22px;
+  border-radius: 16px;
+  background: #fff;
+  color: #394c3b;
+  box-shadow: 0 18px 60px #11221740;
+}
+
+.admin-role .notice-detail h3 {
+  margin: 8px 0;
+  font-size: 18px;
+}
+
+.admin-role .notice-detail p {
+  white-space: pre-wrap;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+.admin-role .notice-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #e8eee5;
+  border-radius: 8px;
+  background: white;
+  color: #536653;
+  cursor: pointer;
+}
+
+.admin-role .receipt-list {
+  margin: 14px 0;
+}
+
+.admin-role .receipt-list > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 0;
+  border-top: 1px solid #eef2eb;
+  font-size: 12.5px;
+}
+
+.admin-role .receipt-list small {
+  color: #869286;
+}
+
+.admin-role .students-dashboard-card .donut-row {
+  flex-direction: column;
+  min-height: 290px;
+  justify-content: center;
+  gap: 12px;
+}
+
+.admin-role .students-dashboard-card .donut-legend {
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  gap: 7px;
+}
+
+.admin-role .students-dashboard-card .donut-legend span {
+  justify-content: center;
+  grid-template-columns: 9px auto auto;
+}
+
+.admin-role .students-dashboard-card .donut-legend b {
+  grid-column: auto;
+}
+
+.admin-role .students-dashboard-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 9px;
+  border-top: 1px solid #edf1eb;
+  color: #8b968b;
+  font-size: 12px;
+}
+
+.admin-role .students-dashboard-total b {
+  color: #3e6b35;
+}
+
+.admin-role .reports-content {
+  max-width: 1500px;
+}
+
+.admin-role .reports-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 16px;
+}
+
+.admin-role .reports-filters {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.admin-role .reports-filters > select,
+.admin-role .reports-filters > input,
+.admin-role .locked-school-select {
+  height: 39px;
+  padding: 0 12px;
+  border: 1px solid #e6eee2;
+  border-radius: 10px;
+  background: #fff;
+  color: #4e604f;
+  font:
+    13px "Poppins",
+    sans-serif;
+}
+
+.admin-role .reports-filters .school-combobox input {
+  height: 39px;
+  min-width: 250px;
+  max-width: 390px;
+  width: 32vw;
+  background: #fff;
+  font-size: 13px;
+}
+
+.admin-role .locked-school-select {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 230px;
+}
+
+.admin-role .locked-school-select span {
+  color: #8d998c;
+  font-size: 12px;
+}
+
+.admin-role .report-download {
+  height: 39px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 9px;
+  background: #1f4334;
+  color: #fff;
+  font:
+    12.5px "Poppins",
+    sans-serif;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.admin-role .reports-empty-state {
+  min-height: 300px;
+  display: grid;
+  place-items: center;
+  border: 1px dashed #dce7d7;
+  border-radius: 16px;
+  background: #fff;
+  color: #859185;
+  font-size: 13px;
+}
+
+.admin-role .report-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.admin-role .report-card {
+  min-height: 285px;
+  padding: 16px !important;
+}
+
+.admin-role .report-card .card-heading select {
+  max-width: 145px;
+  height: 30px;
+  padding: 0 8px;
+  border: 1px solid #e6eee2;
+  border-radius: 8px;
+  background: #f8faf6;
+  color: #647364;
+  font:
+    12px "Poppins",
+    sans-serif;
+}
+
+.admin-role .report-card .donut-row {
+  min-height: 190px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 9px;
+}
+
+.admin-role .report-card .donut-legend {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.admin-role .report-donut-caption {
+  text-align: center;
+  color: #96a096;
+  font-size: 12px;
+}
+
+.admin-role .report-skeleton {
+  min-height: 205px;
+}
+
+.admin-role .report-error {
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #9d544b;
+  font-size: 13px;
+}
+
+.admin-role .report-error button {
+  border: 1px solid #e6eee2;
+  border-radius: 7px;
+  background: #fff;
+  padding: 6px 10px;
+  color: #496447;
+  font:
+    12.5px "Poppins",
+    sans-serif;
+  cursor: pointer;
+}
+
+.admin-role .funds-chart-wrap {
+  padding-top: 5px;
+}
+
+.admin-role .funds-chart {
+  width: 100%;
+  height: 215px;
+  overflow: visible;
+}
+
+.admin-role .report-grid-line {
+  stroke: #e8eee5;
+  stroke-width: 1;
+}
+
+.admin-role .fund-line {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.admin-role .received-line {
+  stroke: #86cf70;
+}
+
+.admin-role .spent-line {
+  stroke: #3e6b35;
+}
+
+.admin-role .fund-point {
+  fill: #86cf70;
+  stroke: white;
+  stroke-width: 2;
+  cursor: pointer;
+}
+
+.admin-role .fund-month-label {
+  fill: #859185;
+  font:
+    12px "Poppins",
+    sans-serif;
+}
+
+.admin-role .fund-chart-tooltip-hint {
+  margin-top: -4px;
+  text-align: right;
+  color: #9aa399;
+  font-size: 11px;
+}
+
+.admin-role .report-attendance-bars {
+  height: 210px;
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 10px 2px 0;
+  border-bottom: 1px solid #e9eee6;
+}
+
+.admin-role .report-attendance-day {
+  height: 100%;
+  min-width: 22px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+}
+
+.admin-role .report-stack-bar {
+  width: min(25px, 82%);
+  height: calc(100% - 28px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  border-radius: 7px 7px 3px 3px;
+  background: #f0f3ed;
+}
+
+.admin-role .report-stack-bar i,
+.admin-role .report-stack-bar b {
+  display: block;
+  min-height: 0;
+}
+
+.admin-role .report-stack-bar i {
+  background: #86cf70;
+}
+
+.admin-role .report-stack-bar b {
+  background: #3e6b35;
+}
+
+.admin-role .report-stack-bar em {
+  height: 100%;
+  background: #e2e7e0;
+}
+
+.admin-role .report-attendance-day small {
+  font-size: 11px;
+  color: #859185;
+  white-space: nowrap;
+}
+
+.admin-role .report-attendance-day.no-data-day .report-stack-bar {
+  background: #e4e9e3;
+}
+
+.admin-role .report-activities {
+  display: grid;
+  gap: 0;
+}
+
+.admin-role .report-activity {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 0;
+  border-bottom: 1px solid #eef2eb;
+}
+
+.admin-role .activity-icon {
+  width: 29px;
+  height: 29px;
+  flex: 0 0 29px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #eaf5e6;
+  color: #4d7944;
+}
+
+.admin-role .report-activity > div {
+  min-width: 0;
+  flex: 1;
+}
+
+.admin-role .report-activity b,
+.admin-role .report-activity small {
+  display: block;
+}
+
+.admin-role .report-activity b {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #394a3a;
+  font-size: 12.5px;
+}
+
+.admin-role .report-activity small {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-top: 3px;
+  color: #899489;
+  font-size: 11px;
+}
+
+.admin-role .report-activity time {
+  color: #8b968b;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.admin-role .report-activity-footer {
+  margin-top: 12px;
+  color: #718071;
+  font-size: 12px;
+}
+
+.admin-role .school-notices-panel {
+  position: relative;
+}
+
+.admin-role .school-notice-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 10px 0;
+  text-align: left;
+  border: 0;
+  border-top: 1px solid #eef2eb;
+  background: transparent;
+  cursor: pointer;
+}
+
+.admin-role .school-notice-row > span:nth-child(2) {
+  min-width: 0;
+  flex: 1;
+}
+
+.admin-role .school-notice-row b,
+.admin-role .school-notice-row small {
+  display: block;
+}
+
+.admin-role .school-notice-row b {
+  color: #3e4f3f;
+  font-size: 12.5px;
+}
+
+.admin-role .school-notice-row small {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-top: 3px;
+  color: #859185;
+  font-size: 12px;
+}
+
+.admin-role .school-notice-row.read {
+  opacity: 0.65;
+}
+
+.admin-role .priority-dot,
+.admin-role .notice-new-dot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: #86cf70;
+}
+
+.admin-role .priority-dot.important {
+  background: #e4ad45;
+}
+
+.admin-role .priority-dot.urgent {
+  background: #d8624f;
+}
+
+.admin-role .notice-new-dot {
+  background: #e7a43b;
+}
+
+.admin-role .notice-unread-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 14px;
+  height: 14px;
+  display: grid;
+  place-items: center;
+  padding: 0 3px;
+  border-radius: 10px;
+  background: #d94f42;
+  color: #fff;
+  font-size: 11px;
+  font-style: normal;
+}
+
+.admin-role .school-urgent-banner {
+  width: calc(100% - 48px);
+  max-width: 1440px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px auto 0;
+  padding: 11px 14px;
+  border: 1px solid #f1c7bf;
+  border-radius: 11px;
+  background: #fff3f0;
+  color: #a33e32;
+  text-align: left;
+  cursor: pointer;
+}
+
+.admin-role .school-urgent-banner span {
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-role .school-urgent-banner b,
+.admin-role .school-urgent-banner small {
+  display: block;
+}
+
+.admin-role .school-urgent-banner b {
+  font-size: 13px;
+}
+
+.admin-role .school-urgent-banner small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 3px;
+  font-size: 12px;
+}
+
+.admin-role .admin-dashboard-layout {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 15px;
+  align-items: stretch;
+  margin-top: 5px;
+}
+
+.admin-role .admin-dashboard-layout > .card {
+  min-width: 0;
+  margin: 0;
+  border: 1px solid #edf1e9;
+  border-radius: 17px;
+  background: #fff;
+  box-shadow: 0 6px 20px #365a300b;
+}
+
+.admin-role .admin-dashboard-layout h2 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+  font:
+    600 15px "Poppins",
+    sans-serif;
+  color: #253b2e;
+}
+
+.admin-role .admin-dashboard-layout .card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.admin-role .admin-dashboard-layout .calendar-card {
+  grid-column: span 5;
+  min-height: 370px;
+  padding: 17px;
+}
+
+.admin-role .admin-dashboard-layout .calendar-head {
+  margin: 0 0 10px;
+}
+
+.admin-role .admin-dashboard-layout .calendar-head b {
+  font-size: 13px;
+}
+
+.admin-role .admin-dashboard-layout .calendar-weekdays,
+.admin-role .admin-dashboard-layout .calendar-dates {
+  gap: 3px;
+}
+
+.admin-role .admin-dashboard-layout .calendar-weekdays b {
+  font-size: 11px;
+}
+
+.admin-role .admin-dashboard-layout .calendar-dates button,
+.admin-role .admin-dashboard-layout .calendar-dates i {
+  height: 29px;
+  font-size: 12px;
+}
+
+.admin-role .admin-dashboard-layout .calendar-day-detail {
+  min-height: 65px;
+  padding: 8px 10px;
+  margin-top: 8px;
+}
+
+.admin-role .admin-dashboard-layout .calendar-event-form {
+  grid-template-columns: 1fr 1fr;
+}
+
+.admin-role .admin-dashboard-layout .calendar-event-form > select[multiple] {
+  grid-column: 1/-1;
+}
+
+.admin-role .quick-actions-card {
+  grid-column: span 3;
+  padding: 17px !important;
+}
+
+.admin-role .quick-heading-icon,
+.admin-role .recent-clock,
+.admin-role .notice-board-icon,
+.admin-role .students-heading-icon {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: #e8f5e5;
+  color: #4f8e48;
+}
+
+.admin-role .quick-action-list {
+  display: grid;
+  gap: 9px;
+  margin-top: 8px;
+}
+
+.admin-role .quick-action-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 43px;
+  padding: 7px 9px;
+  border: 1px solid #eef2eb;
+  border-radius: 11px;
+  background: #fbfcfa;
+  text-align: left;
+  color: #3d4d3f;
+  box-shadow: 0 3px 10px #253f2707;
+  transition:
+    transform 0.16s ease,
+    background 0.16s ease;
+}
+
+.admin-role .quick-action-button:hover {
+  transform: translateY(-1px);
+  background: #f1f8ef;
+}
+
+.admin-role .quick-action-button > span {
+  width: 29px;
+  height: 29px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: #e9f6e7;
+  color: #468943;
+}
+
+.admin-role .quick-action-button b {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.admin-role .quick-action-button > svg:last-child {
+  color: #849084;
+}
+
+.admin-role .recent-activity-card {
+  grid-column: span 4;
+  min-height: 370px;
+  padding: 17px !important;
+}
+
+.admin-role .recent-clock {
+  background: transparent;
+  color: #547b58;
+}
+
+.admin-role .activity-live {
+  padding: 4px 7px;
+  border-radius: 10px;
+  background: #eff7ec;
+  color: #51844a;
+  font-size: 11px;
+}
+
+.admin-role .activity-head-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-role .activity-punch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid #cbe0cb;
+  border-radius: 999px;
+  background: #eff8ed;
+  color: #255a3c;
+  padding: 5px 11px;
+  font-size: 11.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.admin-role .activity-punch-btn:hover {
+  background: #dff0dc;
+}
+
+.admin-role .activity-punch-form {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  background: #f5faf4;
+  border: 1px solid #dce9db;
+}
+
+.admin-role .activity-preset-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.admin-role .activity-preset-row button {
+  border: 1px solid #d5e4d4;
+  border-radius: 999px;
+  background: #fff;
+  color: #345a44;
+  padding: 4px 9px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.admin-role .activity-preset-row button.active {
+  background: #204c38;
+  border-color: #204c38;
+  color: #fff;
+}
+
+.admin-role .activity-punch-form input,
+.admin-role .activity-punch-form select {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #d8e4d8;
+  border-radius: 8px;
+  background: #fff;
+  color: #22392d;
+  padding: 8px 10px;
+  font:
+    12.5px "Poppins",
+    "DM Sans",
+    sans-serif;
+}
+
+.admin-role .activity-punch-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.admin-role .activity-punch-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 0;
+  border-radius: 8px;
+  background: #204c38;
+  color: #fff;
+  padding: 9px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.admin-role .activity-punch-submit:hover:not(:disabled) {
+  background: #2c6449;
+}
+
+.admin-role .activity-punched-tag {
+  display: inline-block;
+  margin-left: 7px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: #e6f2e4;
+  color: #2a5f3e;
+  font-style: normal;
+  font-size: 10.5px;
+  font-weight: 600;
+}
+
+.admin-role.dark-mode .activity-punch-form {
+  background: #22382d;
+  border-color: #385143;
+}
+
+.admin-role.dark-mode .activity-punch-form input,
+.admin-role.dark-mode .activity-punch-form select {
+  background: #14231d;
+  color: #e4ece4;
+  border-color: #45594d;
+}
+
+.admin-role.dark-mode .activity-preset-row button {
+  background: #1a2d24;
+  border-color: #3d5648;
+  color: #c7d8c9;
+}
+
+.admin-role.dark-mode .activity-punch-btn {
+  background: #244032;
+  border-color: #3f604e;
+  color: #c8e5cd;
+}
+
+.admin-role .recent-activity-row {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 62px;
+  padding: 9px 0 8px 7px;
+  border-left: 1px solid #e8eee5;
+}
+
+.admin-role .recent-activity-row:last-child {
+  border-left-color: transparent;
+}
+
+.admin-role .activity-timeline-dot {
+  position: absolute;
+  left: -4px;
+  top: 14px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #55a6f0;
+}
+
+.admin-role .activity-timeline-dot.tone-1 {
+  background: #31a75b;
+}
+
+.admin-role .activity-timeline-dot.tone-2 {
+  background: #f0a53f;
+}
+
+.admin-role .activity-timeline-dot.tone-3 {
+  background: #438c58;
+}
+
+.admin-role .recent-activity-row > span {
+  min-width: 0;
+  flex: 1;
+  padding-left: 7px;
+}
+
+.admin-role .recent-activity-row b,
+.admin-role .recent-activity-row small {
+  display: block;
+}
+
+.admin-role .recent-activity-row b {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #344435;
+  font-size: 12.5px;
+}
+
+.admin-role .recent-activity-row small {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  margin-top: 4px;
+  color: #8a958a;
+  font-size: 11px;
+}
+
+.admin-role .recent-activity-row time {
+  color: #859185;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.admin-role .activity-skeleton {
+  min-height: 210px;
+}
+
+.admin-role .activity-empty {
+  min-height: 190px;
+}
+
+.admin-role .notice-board-card {
+  grid-column: span 4;
+  min-height: 165px;
+  padding: 17px !important;
+}
+
+.admin-role .notice-board-icon {
+  background: #eff6ed;
+  color: #478448;
+}
+
+.admin-role .notice-board-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 9px 0;
+  border: 0;
+  border-top: 1px solid #eff2ec;
+  background: transparent;
+  text-align: left;
+}
+
+.admin-role .notice-board-row b {
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #344435;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.admin-role .notice-board-row time {
+  color: #869186;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.admin-role .notice-board-empty {
+  min-height: 70px;
+}
+
+.admin-role .admin-dashboard-layout .students-dashboard-card {
+  grid-column: span 4;
+  min-height: 165px;
+  padding: 17px !important;
+}
+
+.admin-role .students-dashboard-card .card-heading {
+  margin-bottom: 4px;
+}
+
+.admin-role .admin-dashboard-layout .students-dashboard-card .donut-row {
+  min-height: 112px;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 9px;
+  margin: 0;
+}
+
+.admin-role .admin-dashboard-layout .students-dashboard-card .student-donut {
+  width: 105px;
+  height: 105px;
+  flex: 0 0 105px;
+}
+
+.admin-role
+  .admin-dashboard-layout
+  .students-dashboard-card
+  .student-donut:before {
+  inset: 17px;
+}
+
+.admin-role
+  .admin-dashboard-layout
+  .students-dashboard-card
+  .student-donut
+  strong {
+  font-size: 15px;
+}
+
+.admin-role .admin-dashboard-layout .students-dashboard-card .donut-legend {
+  width: auto;
+  display: grid;
+  gap: 10px;
+  font-size: 11px;
+}
+
+.admin-role .admin-dashboard-layout .students-dashboard-card .donut-legend b {
+  font-size: 12px;
+}
+
+.admin-role .students-overview-legend {
+  display: grid;
+  gap: 4px;
+  margin: 0 0 5px 12px;
+  font-size: 11px;
+  color: #768576;
+}
+
+.admin-role .students-overview-legend span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.admin-role .students-overview-legend b {
+  margin-left: auto;
+  color: #677668;
+  font-weight: 500;
+}
+
+.admin-role .students-dashboard-total {
+  padding-top: 5px;
+  font-size: 11px;
+}
+
+.admin-role .admin-promo-card {
+  position: relative;
+  grid-column: span 4;
+  min-height: 165px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px !important;
+  background: linear-gradient(120deg, #164a38, #0e6548 62%, #075536) !important;
+  color: #fff !important;
+}
+
+.admin-role .admin-promo-card > svg {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 7px;
+  color: #d6eacb;
+}
+
+.admin-role .admin-promo-card > b {
+  position: relative;
+  z-index: 1;
+  max-width: 72%;
+  font:
+    22px "DM Serif Display",
+    serif;
+}
+
+.admin-role .admin-promo-card > p {
+  position: relative;
+  z-index: 1;
+  max-width: 75%;
+  margin: 5px 0 8px;
+  color: #d1e4d6;
+  font-size: 12px;
+}
+
+.admin-role .promo-link {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 9px;
+  border: 1px solid #ffffff70;
+  border-radius: 12px;
+  font-size: 11px;
+}
+
+.admin-role .promo-orbit {
+  position: absolute;
+  border-radius: 50%;
+  background: #9acb8a25;
+}
+
+.admin-role .orbit-one {
+  width: 165px;
+  height: 165px;
+  right: -25px;
+  top: -40px;
+}
+
+.admin-role .orbit-two {
+  width: 90px;
+  height: 90px;
+  right: 65px;
+  bottom: -55px;
+}
+
+.admin-role .promo-books {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  color: #d2e8cb65;
+  font-size: 30px;
+  line-height: 0.65;
+  transform: rotate(-7deg);
+}
+
+.admin-role .admin-notice-compose-overlay {
+  position: fixed;
+  z-index: 40;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: #12261da8;
+}
+
+.admin-role .admin-notice-compose {
+  position: relative;
+  width: min(540px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  border-radius: 17px;
+  background: #fff;
+  box-shadow: 0 25px 75px #0a1b1360;
+}
+
+.admin-role .admin-notice-compose > .notice-card {
+  min-height: 0 !important;
+  margin: 0;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.admin-role .admin-notice-compose > .notice-card .notice-form {
+  padding-bottom: 3px;
+}
+
+.admin-role .admin-notice-compose > .notice-card > .notice-close {
+  position: sticky;
+  z-index: 2;
+  float: right;
+  top: 12px;
+  margin: 12px 12px -42px 0;
+}
+
+/* Keep X button and Send icon from overlapping in the compose card header */
+.admin-role .admin-notice-compose > .notice-card > .card-heading {
+  padding-right: 48px;
+}
+
+.admin-role.dark-mode .admin-dashboard-layout > .card {
+  background: #1d3027;
+  border-color: #34483e;
+  color: #e4ece4;
+}
+
+.admin-role.dark-mode .admin-dashboard-layout h2,
+.admin-role.dark-mode .recent-activity-row b,
+.admin-role.dark-mode .notice-board-row b {
+  color: #e4ece4;
+}
+
+.admin-role.dark-mode .quick-action-button {
+  background: #21362c;
+  border-color: #34483e;
+  color: #e4ece4;
+}
+
+.admin-role.dark-mode .quick-action-button:hover {
+  background: #2a4134;
+}
+
+.admin-role.dark-mode .recent-activity-row,
+.admin-role.dark-mode .notice-board-row {
+  border-color: #34483e;
+}
+
+.dashboard-school-menu {
+  position: fixed;
+  z-index: 99999;
+  max-height: min(320px, 55vh);
+  overflow: auto;
+  padding: 5px;
+  border: 1px solid #dfe9db;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 14px 35px #203b2540;
+}
+
+.dashboard-school-menu button {
+  display: block;
+  width: 100%;
+  padding: 9px 10px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #3d5140;
+  text-align: left;
+  font:
+    13px "Poppins",
+    sans-serif;
+  cursor: pointer;
+}
+
+.dashboard-school-menu button:hover,
+.dashboard-school-menu button[aria-selected="true"] {
+  background: #edf7e9;
+  color: #315d35;
+}
+
+.dashboard-school-menu small {
+  display: block;
+  padding: 10px;
+  color: #849184;
+  font:
+    12.5px "Poppins",
+    sans-serif;
+}
+
+@media (max-width: 1120px) {
+  .admin-role .admin-dashboard-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .admin-role .admin-dashboard-layout > .card {
+    grid-column: span 1;
+  }
+  .admin-role .admin-dashboard-layout .calendar-card {
+    grid-column: span 1;
+  }
+  .admin-role .admin-dashboard-layout .recent-activity-card,
+  .admin-role .admin-dashboard-layout .notice-board-card,
+  .admin-role .admin-dashboard-layout .students-dashboard-card,
+  .admin-role .admin-dashboard-layout .admin-promo-card {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 760px) {
+  .admin-role .admin-dashboard-layout {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .admin-role .admin-dashboard-layout > .card,
+  .admin-role .admin-dashboard-layout .calendar-card,
+  .admin-role .admin-dashboard-layout .recent-activity-card,
+  .admin-role .admin-dashboard-layout .notice-board-card,
+  .admin-role .admin-dashboard-layout .students-dashboard-card,
+  .admin-role .admin-dashboard-layout .admin-promo-card {
+    grid-column: 1/-1;
+    min-height: 0;
+  }
+  .admin-role .admin-dashboard-layout .calendar-card {
+    min-height: 345px;
+  }
+  .admin-role .admin-dashboard-layout .students-dashboard-card .donut-row {
+    min-height: 145px;
+  }
+  .admin-role .admin-promo-card {
+    min-height: 165px !important;
+  }
+}
+
+.admin-role.dark-mode .calendar-day-detail,
+.admin-role.dark-mode .notice-form input:not([type="radio"]):not([type="file"]),
+.admin-role.dark-mode .notice-form textarea,
+.admin-role.dark-mode .notice-form select,
+.admin-role.dark-mode .notice-school-multi,
+.admin-role.dark-mode .calendar-event-form input,
+.admin-role.dark-mode .calendar-event-form select,
+.admin-role.dark-mode .reports-empty-state,
+.admin-role.dark-mode .reports-filters > select,
+.admin-role.dark-mode .reports-filters > input,
+.admin-role.dark-mode .locked-school-select,
+.admin-role.dark-mode .report-card .card-heading select {
+  background: #1d3027;
+  border-color: #34483e;
+  color: #e4ece4;
+}
+
+.admin-role.dark-mode .calendar-day-detail > b,
+.admin-role.dark-mode .recent-notice-row b,
+.admin-role.dark-mode .school-notice-row b,
+.admin-role.dark-mode .report-activity b {
+  color: #e4ece4;
+}
+
+.admin-role.dark-mode .calendar-event-row,
+.admin-role.dark-mode .report-activity,
+.admin-role.dark-mode .recent-notice-row,
+.admin-role.dark-mode .school-notice-row {
+  border-color: #34483e;
+}
+
+@media (max-width: 1120px) {
+  .admin-role .admin-dashboard-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .admin-role .notice-card {
+    grid-row: auto;
+  }
+  .admin-role .report-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 760px) {
+  .admin-role .admin-dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+  .admin-role .admin-dashboard-cards > .card {
+    min-height: 0;
+  }
+  .admin-role .admin-dashboard-cards .notice-card {
+    grid-row: auto;
+  }
+  .admin-role .students-dashboard-card .donut-row {
+    min-height: 240px;
+  }
+  .admin-role .reports-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .admin-role .reports-filters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .admin-role .reports-filters .school-combobox {
+    grid-column: 1/-1;
+  }
+  .admin-role .reports-filters .school-combobox input {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+  }
+  .admin-role .reports-filters > select,
+  .admin-role .reports-filters > input {
+    width: 100%;
+    min-width: 0;
+  }
+  .admin-role .report-download {
+    justify-content: center;
+  }
+  .admin-role .report-card-grid {
+    grid-template-columns: 1fr;
+  }
+  .admin-role .report-card {
+    min-height: 320px;
+  }
+  .admin-role .school-urgent-banner {
+    width: calc(100% - 32px);
+  }
+}
+
+@media (max-width: 760px) {
+  .admin-role .admin-card-controls {
+    justify-content: flex-start;
+    width: 100%;
+  }
+  .admin-role .admin-home-grid .card-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .admin-role .admin-card-controls > select,
+  .admin-role .school-combobox input {
+    max-width: 100%;
+    width: min(68vw, 220px);
+  }
+  .admin-role .school-options {
+    min-width: 210px;
+  }
+  .admin-role .custom-date-controls {
+    flex-wrap: wrap;
+  }
+}
+
+/* Add stronger color separation to the administration workspace. */
+.admin-role {
+  background: #f5f3e9;
+  color: #20392d;
+}
+
+.admin-role .sidebar {
+  background: linear-gradient(180deg, #174b3a 0%, #123e32 100%);
+  border-color: #285b48;
+  color: #f4f5e9;
+  box-shadow: 4px 0 24px #163d2a16;
+}
+
+.admin-role .sidebar .brand,
+.admin-role .sidebar .brand b,
+.admin-role .sidebar .side-bottom b {
+  color: #fffdf3;
+}
+
+.admin-role .sidebar .brand small,
+.admin-role .sidebar .side-bottom small {
+  color: #bad0c1;
+}
+
+.admin-role .sidebar .center-chip {
+  background: #ffffff12;
+  border-color: #ffffff27;
+  color: #f2f5e9;
+}
+
+.admin-role .sidebar .side-label {
+  color: #8eaf99;
+}
+
+.admin-role .sidebar .side-link {
+  color: #d3e2d6;
+}
+
+.admin-role .sidebar .side-link.selected,
+.admin-role .sidebar .side-link:hover {
+  background: #ffffff18;
+  color: #fff;
+  box-shadow: inset 3px 0 #f4b943;
+}
+
+.admin-role .sidebar .side-bottom {
+  border-color: #ffffff26;
+}
+
+.admin-role .main {
+  background: linear-gradient(135deg, #f6f5ec 0%, #eff6ed 52%, #f8f0df 100%);
+}
+
+.admin-role .topbar {
+  background: #fbfaf4;
+  border-color: #e7e8dc;
+}
+
+.admin-role .stat-card {
+  border: 1px solid transparent;
+  box-shadow: 0 9px 24px #334d3512;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.admin-role .stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 13px 28px #334d3520;
+}
+
+.admin-role .stats .stat-card:nth-child(1) {
+  background: linear-gradient(135deg, #e3f2df, #f3f8e9);
+  border-color: #d5e8d0;
+}
+
+.admin-role .stats .stat-card:nth-child(2) {
+  background: linear-gradient(135deg, #fff0ce, #fff8e9);
+  border-color: #f2e2bd;
+}
+
+.admin-role .stats .stat-card:nth-child(3) {
+  background: linear-gradient(135deg, #e3eff5, #f2f8f7);
+  border-color: #d7e7e9;
+}
+
+.admin-role .stats .stat-card:nth-child(4) {
+  background: linear-gradient(135deg, #f7e5dc, #fff2e8);
+  border-color: #eed9ce;
+}
+
+.admin-role .stats .stat-card:nth-child(1) .stat-icon {
+  background: #cce6c4;
+  color: #327047;
+}
+
+.admin-role .stats .stat-card:nth-child(2) .stat-icon {
+  background: #ffe1a1;
+  color: #93621b;
+}
+
+.admin-role .stats .stat-card:nth-child(3) .stat-icon {
+  background: #cde3ed;
+  color: #316d83;
+}
+
+.admin-role .stats .stat-card:nth-child(4) .stat-icon {
+  background: #efcfc0;
+  color: #9c563d;
+}
+
+.admin-role .stat-card.dark-stat {
+  background: linear-gradient(135deg, #326b45, #204f3b);
+  border-color: #326b45;
+}
+
+.admin-role .admin-home-grid .card {
+  border-color: #e7e9dc;
+  box-shadow: 0 9px 24px #334d3510;
+}
+
+.admin-role .calendar-card {
+  background: linear-gradient(150deg, #fffdf7, #f7f1df) !important;
+}
+
+.admin-role .quick-actions-card {
+  background: linear-gradient(150deg, #f0f7eb, #e6f1e4) !important;
+}
+
+.admin-role .recent-activity-card {
+  background: linear-gradient(150deg, #f1f7f8, #e9f1f2) !important;
+}
+
+.admin-role .quick-heading-icon,
+.admin-role .recent-clock {
+  background: #d9ecd2;
+  color: #397347;
+}
+
+.admin-role .quick-action-button {
+  background: #ffffffa8;
+  border-color: #dfe9d9;
+}
+
+.admin-role .quick-action-button > span {
+  background: #e0f0dc;
+  color: #37744a;
+}
+
+.admin-role .quick-action-button:hover {
+  background: #fff;
+  transform: translateX(2px);
+}
+
+.admin-role .calendar-day-detail {
+  background: #fffdf6;
+}
+
+.admin-role .calendar-grid button.today,
+.admin-role .calendar-grid button.chosen {
+  background: #f7d477;
+  color: #3d4a2c;
+}
+
+.admin-role .activity-timeline-dot.tone-0 {
+  background: #e2a33d;
+}
+
+.admin-role .activity-timeline-dot.tone-1 {
+  background: #4f9b68;
+}
+
+.admin-role .activity-timeline-dot.tone-2 {
+  background: #5a9bb2;
+}
+
+.admin-role .activity-timeline-dot.tone-3 {
+  background: #d47b5d;
+}
+
+/* High contrast, light dashboard treatment matching the supplied reference. */
+.admin-role {
+  color: #18352a;
+  background: #f5f7f2;
+}
+
+.admin-role .sidebar {
+  background: #fff;
+  border-right: 1px solid #e5ebe4;
+  color: #425648;
+  box-shadow: 2px 0 18px #18352a08;
+}
+
+.admin-role .sidebar .brand,
+.admin-role .sidebar .brand b,
+.admin-role .sidebar .side-bottom b {
+  color: #213d30;
+}
+
+.admin-role .sidebar .brand small,
+.admin-role .sidebar .side-bottom small {
+  color: #7c8a7e;
+}
+
+.admin-role .sidebar .center-chip {
+  background: #f2f7ef;
+  border-color: #dfe9dc;
+  color: #425648;
+}
+
+.admin-role .sidebar .side-label {
+  color: #89968a;
+}
+
+.admin-role .sidebar .side-link {
+  color: #526456;
+}
+
+.admin-role .sidebar .side-link.selected,
+.admin-role .sidebar .side-link:hover {
+  background: #e7f3e3;
+  color: #285d3b;
+  box-shadow: inset 3px 0 #4c9b57;
+}
+
+.admin-role .sidebar .side-bottom {
+  border-color: #e5ebe4;
+}
+
+.admin-role .main {
+  background: #f4f7f1;
+}
+
+.admin-role .topbar {
+  background: #fff;
+  border-color: #e7ece5;
+}
+
+.admin-role .welcome-row {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 19px 22px;
+  margin: 0 0 17px;
+  border: 1px solid #e1eae0;
+  border-radius: 18px;
+  background: linear-gradient(110deg, #f8fbf5 0%, #edf5ec 66%, #f7f8f2 100%);
+}
+
+.admin-role .welcome-row:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 330px;
+  height: 170px;
+  right: -26px;
+  bottom: -105px;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 35% 35%, #dcebdd 0 22%, transparent 23%),
+    radial-gradient(ellipse at 60% 10%, #e3efe0 0 31%, transparent 32%);
+  opacity: 0.85;
+}
+
+.admin-role .welcome-row h1,
+.admin-role .welcome-row .subheading,
+.admin-role .welcome-row .eyebrow {
+  color: #1f392d;
+}
+
+.admin-role .stat-card {
+  min-height: 118px;
+  border: 1px solid #e5ebe4;
+  box-shadow: 0 7px 20px #203b2b0a;
+}
+
+.admin-role .stats .stat-card:nth-child(1) {
+  background: #fff;
+  border-top: 3px solid #68a96a;
+  border-color: #e3ebe0;
+  border-top-color: #68a96a;
+}
+
+.admin-role .stats .stat-card:nth-child(2) {
+  background: #fff;
+  border: 1px solid #eee6d5;
+  border-top: 3px solid #e5ad45;
+}
+
+.admin-role .stats .stat-card:nth-child(3) {
+  background: #fff;
+  border: 1px solid #dfe9eb;
+  border-top: 3px solid #68a4b5;
+}
+
+.admin-role .stats .stat-card:nth-child(4),
+.admin-role .stat-card.dark-stat {
+  background: linear-gradient(135deg, #326b45, #204f3b);
+  border: 1px solid #326b45;
+  color: #fff;
+}
+
+.admin-role .stats .stat-card:nth-child(1) .eyebrow,
+.admin-role .stats .stat-card:nth-child(1) .stat-value,
+.admin-role .stats .stat-card:nth-child(1) .stat-value small,
+.admin-role .stats .stat-card:nth-child(2) .eyebrow,
+.admin-role .stats .stat-card:nth-child(2) .stat-value,
+.admin-role .stats .stat-card:nth-child(2) .stat-value small,
+.admin-role .stats .stat-card:nth-child(3) .eyebrow,
+.admin-role .stats .stat-card:nth-child(3) .stat-value,
+.admin-role .stats .stat-card:nth-child(3) .stat-value small {
+  color: #263b30;
+}
+
+.admin-role .stats .stat-card:nth-child(4) .eyebrow,
+.admin-role .stats .stat-card:nth-child(4) .stat-value,
+.admin-role .stats .stat-card:nth-child(4) .stat-value small {
+  color: #fff;
+}
+
+.admin-role .stats .stat-card:nth-child(4) .stat-icon {
+  background: #ffffff24;
+  color: #fff;
+}
+
+.admin-role .admin-home-grid .card {
+  background: #fff !important;
+  border: 1px solid #e5ebe4;
+  box-shadow: 0 8px 22px #203b2b0a;
+}
+
+.admin-role .admin-home-grid .card-heading h2,
+.admin-role .calendar-head b,
+.admin-role .quick-action-button b,
+.admin-role .recent-activity-row b {
+  color: #20392d;
+}
+
+.admin-role .calendar-day-detail {
+  background: #f7faf6;
+  border: 1px solid #edf1eb;
+}
+
+.admin-role .calendar-head button {
+  background: #fff;
+  color: #42654b;
+  border-color: #e3eae1;
+}
+
+.admin-role .calendar-dates button.today,
+.admin-role .calendar-dates button.chosen {
+  background: #32704a;
+  color: #fff;
+}
+
+.admin-role .quick-action-button {
+  background: #fbfdfb;
+  border-color: #e8eee7;
+  color: #294736;
+}
+
+.admin-role .quick-action-button > span {
+  background: #e6f2e3;
+  color: #347248;
+}
+
+.admin-role .quick-action-button b {
+  font-weight: 600;
+}
+
+.admin-role .recent-activity-row small,
+.admin-role .recent-activity-row time {
+  color: #66776a;
+}
+
+.app-shell:not(.admin-role) .school-notices-panel {
+  position: relative;
+  padding: 18px;
+  border: 1px solid #e8eee5;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 5px 18px #3454300a;
+}
+
+.app-shell:not(.admin-role) .school-notice-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 10px 0;
+  text-align: left;
+  border: 0;
+  border-top: 1px solid #eef2eb;
+  background: transparent;
+  cursor: pointer;
+}
+
+.app-shell:not(.admin-role) .school-notice-row > span:nth-child(2) {
+  min-width: 0;
+  flex: 1;
+}
+
+.app-shell:not(.admin-role) .school-notice-row b,
+.app-shell:not(.admin-role) .school-notice-row small {
+  display: block;
+}
+
+.app-shell:not(.admin-role) .school-notice-row b {
+  color: #3e4f3f;
+  font-size: 13px;
+}
+
+.app-shell:not(.admin-role) .school-notice-row small {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-top: 3px;
+  color: #859185;
+  font-size: 12px;
+}
+
+.app-shell:not(.admin-role) .school-notice-row.read {
+  opacity: 0.65;
+}
+
+.app-shell:not(.admin-role) .priority-dot,
+.app-shell:not(.admin-role) .notice-new-dot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: #86cf70;
+}
+
+.app-shell:not(.admin-role) .priority-dot.important {
+  background: #e4ad45;
+}
+
+.app-shell:not(.admin-role) .priority-dot.urgent {
+  background: #d8624f;
+}
+
+.app-shell:not(.admin-role) .notice-new-dot {
+  background: #e7a43b;
+}
+
+.app-shell:not(.admin-role) .notice-unread-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 14px;
+  height: 14px;
+  display: grid;
+  place-items: center;
+  padding: 0 3px;
+  border-radius: 10px;
+  background: #d94f42;
+  color: #fff;
+  font-size: 11px;
+  font-style: normal;
+}
+
+.app-shell:not(.admin-role) .notification {
+  position: relative;
+}
+
+.app-shell:not(.admin-role) .school-notices-panel .card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.app-shell:not(.admin-role) .school-notices-panel h2 {
+  margin: 2px 0;
+  font-size: 16px;
+}
+
+.app-shell:not(.admin-role) .school-notice-detail {
+  position: relative;
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 10px;
+  background: #f5f8f3;
+  color: #475747;
+}
+
+.app-shell:not(.admin-role) .school-notice-detail h3 {
+  margin: 7px 0;
+  font-size: 14px;
+}
+
+.app-shell:not(.admin-role) .school-notice-detail p {
+  white-space: pre-wrap;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.app-shell:not(.admin-role) .school-notices-panel .notice-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.app-shell:not(.admin-role) .school-urgent-banner {
+  width: calc(100% - 48px);
+  max-width: 1440px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px auto 0;
+  padding: 11px 14px;
+  border: 1px solid #f1c7bf;
+  border-radius: 11px;
+  background: #fff3f0;
+  color: #a33e32;
+  text-align: left;
+  cursor: pointer;
+}
+
+.app-shell:not(.admin-role) .school-urgent-banner span {
+  flex: 1;
+  min-width: 0;
+}
+
+.app-shell:not(.admin-role) .school-urgent-banner b,
+.app-shell:not(.admin-role) .school-urgent-banner small {
+  display: block;
+}
+
+.app-shell:not(.admin-role) .school-urgent-banner b {
+  font-size: 13px;
+}
+
+.app-shell:not(.admin-role) .school-urgent-banner small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 3px;
+  font-size: 12px;
+}
+
+.admin-role.dark-mode .report-card,
+.admin-role.dark-mode .reports-empty-state {
+  background: #1d3027;
+  color: #e4ece4;
+  border-color: #34483e;
+}
+
+.admin-role.dark-mode .report-activity b,
+.admin-role.dark-mode .report-card h2 {
+  color: #e4ece4;
+}
+
+.admin-role.dark-mode .report-activity,
+.admin-role.dark-mode .report-activity-footer {
+  border-color: #34483e;
+  color: #aebaae;
+}
+
+.app-shell.dark-mode:not(.admin-role) .school-notices-panel {
+  background: #1d3027;
+  color: #e4ece4;
+  border-color: #34483e;
+}
+
+.app-shell.dark-mode:not(.admin-role) .school-notice-row {
+  border-color: #34483e;
+}
+
+.app-shell.dark-mode:not(.admin-role) .school-notice-row b {
+  color: #e4ece4;
+}
+
+.app-shell.dark-mode:not(.admin-role) .school-notice-detail {
+  background: #263a30;
+  color: #e4ece4;
+}
+
+.admin-role .academic-year-tag {
+  padding: 5px 8px;
+  border-radius: 8px;
+  background: #f1f7ee;
+  color: #71866f;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.admin-role .academic-chart-wrap {
+  padding-top: 6px;
+}
+
+.admin-role .academic-chart {
+  width: 100%;
+  height: 175px;
+  overflow: visible;
+}
+
+.admin-role .academic-progress-line {
+  fill: none;
+  stroke: #4d7d4b;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.admin-role .academic-point {
+  fill: #85cb70;
+  stroke: #fff;
+  stroke-width: 2;
+  cursor: pointer;
+}
+
+.admin-role .academic-y-label {
+  fill: #899589;
+  font:
+    11px "Poppins",
+    sans-serif;
+}
+
+.admin-role .academic-chart-caption,
+.admin-role .meal-report-caption {
+  margin-top: 4px;
+  text-align: center;
+  color: #939e93;
+  font-size: 11px;
+}
+
+.admin-role .meal-report-summary {
+  display: flex;
+  gap: 28px;
+  margin: 5px 0 4px;
+}
+
+.admin-role .meal-report-summary > div {
+  display: grid;
+  gap: 2px;
+}
+
+.admin-role .meal-report-summary b {
+  color: #355d3c;
+  font:
+    20px "DM Serif Display",
+    serif;
+}
+
+.admin-role .meal-report-summary small {
+  color: #899589;
+  font-size: 11px;
+}
+
+.admin-role .meal-report-bars {
+  height: 132px;
+  display: flex;
+  align-items: stretch;
+  gap: 7px;
+  overflow-x: auto;
+  padding: 5px 2px 0;
+  border-bottom: 1px solid #e9eee6;
+}
+
+.admin-role .meal-report-day {
+  height: 100%;
+  min-width: 21px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.admin-role .meal-report-bar {
+  width: min(21px, 82%);
+  height: calc(100% - 23px);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  border-radius: 6px 6px 2px 2px;
+  background: #edf2e9;
+}
+
+.admin-role .meal-report-bar i {
+  width: 100%;
+  min-height: 0;
+  border-radius: 6px 6px 0 0;
+  background: #83c96e;
+}
+
+.admin-role .meal-report-bar em {
+  width: 100%;
+  height: 100%;
+  background: #e2e7e0;
+}
+
+.admin-role .meal-report-day small {
+  color: #879287;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.admin-role .meal-empty {
+  min-height: 86px;
+}
+
+.admin-role .academic-chart-wrap .chart-legend {
+  margin-bottom: 0;
+  font-size: 11px;
+}
+
+.admin-role .academic-chart-wrap .chart-legend .girl-dot {
+  width: 7px;
+  height: 7px;
+}
+
+.admin-role .reports-filters {
+  position: relative;
+  z-index: 8;
+}
+
+.admin-role .reports-filters .school-combobox {
+  z-index: 9;
+}
+
+.admin-role .school-options-message {
+  display: block;
+  padding: 9px;
+  color: #879287;
+  font:
+    12.5px "Poppins",
+    sans-serif;
+}
+
+.admin-role .school-list-error {
+  color: #a94438;
+  font-size: 12px;
+}
+
+.admin-role.dark-mode .academic-year-tag {
+  background: #263a30;
+  color: #b5c3b5;
+}
+
+.admin-role.dark-mode .meal-report-summary b {
+  color: #dce8dc;
+}
+
+.admin-role.dark-mode .meal-report-bars {
+  border-color: #34483e;
+}

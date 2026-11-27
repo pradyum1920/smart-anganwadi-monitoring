@@ -1,0 +1,390 @@
+.meal-menu-content {
+  padding-top: 36px;
+}
+
+.meal-menu-title {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.meal-menu-title h1 {
+  margin-top: 5px;
+}
+
+.menu-date-chip {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 9px 11px;
+  background: #fffefa;
+  color: #607264;
+  font-size: 12px;
+}
+
+.weekly-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.meal-day-card {
+  padding: 16px;
+}
+
+.meal-day-card.today {
+  border-color: #a5b99e;
+  box-shadow: 0 0 0 1px #a5b99e;
+}
+
+.meal-day-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 11px;
+  border-bottom: 1px solid #eeece5;
+  margin-bottom: 2px;
+}
+
+.meal-day-heading small {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #889187;
+}
+
+.meal-day-heading h2 {
+  font:
+    19px "DM Serif Display",
+    serif;
+  color: #294337;
+  margin-top: 3px;
+}
+
+.today-chip {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  border-radius: 15px;
+  background: #edf3e9;
+  color: #42664b;
+  font-size: 11px;
+  padding: 5px 7px;
+}
+
+.meal-slot {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 12px 1px;
+  border-bottom: 1px solid #f0efe9;
+}
+
+.meal-slot:last-child {
+  border: 0;
+}
+
+.meal-slot > span {
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  font-size: 10px;
+  color: #879086;
+}
+
+.meal-slot > b {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #3e5548;
+  line-height: 1.45;
+}
+
+.meal-menu-empty {
+  padding: 42px 20px;
+  text-align: center;
+  color: #7c897e;
+}
+
+.meal-menu-empty > span {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #edf1e9;
+  color: #42644e;
+  margin: 0 auto 12px;
+}
+
+.meal-menu-empty h2 {
+  font:
+    22px "DM Serif Display",
+    serif;
+  color: #294337;
+  margin-bottom: 6px;
+}
+
+.meal-menu-empty p {
+  font-size: 12.5px;
+  color: #899187;
+}
+
+.meal-admin-content {
+  max-width: 1200px;
+}
+
+.meal-admin-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(240px, 0.8fr);
+  gap: 15px;
+  align-items: start;
+}
+
+.meal-editor-card,
+.meal-versions-card {
+  min-width: 0;
+}
+
+.meal-editor-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.meal-editor-head h2 {
+  margin-bottom: 3px;
+}
+
+.meal-editor-head p {
+  font-size: 12px;
+  color: #848b81;
+  margin-bottom: 15px;
+}
+
+.meal-new-version {
+  white-space: nowrap;
+  border: 1px solid #dfe5dc;
+  border-radius: 5px;
+  background: #f6f7f2;
+  color: #42634e;
+  padding: 7px 9px;
+  font-size: 12px;
+}
+
+.meal-admin-table-head,
+.meal-admin-row {
+  display: grid;
+  grid-template-columns: 84px repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  align-items: center;
+}
+
+.meal-admin-table-head {
+  padding: 8px 0;
+  border-bottom: 1px solid #e9e7df;
+  font-size: 11px;
+  color: #848b81;
+  font-weight: 700;
+}
+
+.meal-admin-row {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0efe9;
+}
+
+.meal-admin-row > b {
+  font-size: 12px;
+  color: #405548;
+}
+
+.meal-admin-row label {
+  min-width: 0;
+}
+
+.meal-admin-row label > span {
+  display: none;
+}
+
+.meal-admin-row input {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #e4e6df;
+  border-radius: 5px;
+  padding: 8px;
+  font:
+    12px "DM Sans",
+    sans-serif;
+  color: #263a32;
+  background: #fffefa;
+}
+
+.meal-admin-row input:focus,
+.meal-admin-content .admin-field input:focus {
+  outline: 2px solid #bbcfba;
+  border-color: #78967b;
+}
+
+.meal-admin-content .admin-field {
+  margin: 13px 0;
+}
+
+.meal-admin-content .admin-field input {
+  max-width: 220px;
+}
+
+.meal-admin-content .admin-submit {
+  margin-top: 15px;
+}
+
+.meal-versions-card h2 {
+  font: 18px "DM Serif Display";
+  color: #30483c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.meal-versions-card h2 span {
+  font: 12px "DM Sans";
+  background: #edf1e9;
+  border-radius: 12px;
+  padding: 5px 8px;
+}
+
+.meal-version-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  border: 0;
+  border-top: 1px solid #efeee8;
+  background: transparent;
+  padding: 12px 3px;
+}
+
+.meal-version-row.selected,
+.meal-version-row:hover {
+  background: #f6f7f1;
+}
+
+.meal-version-row > span {
+  min-width: 0;
+  flex: 1;
+}
+
+.meal-version-row b,
+.meal-version-row small {
+  display: block;
+}
+
+.meal-version-row b {
+  font-size: 12px;
+  color: #3e5548;
+}
+
+.meal-version-row small {
+  font-size: 11px;
+  color: #899187;
+  margin-top: 4px;
+}
+
+.meal-version-row svg {
+  color: #6d8170;
+}
+
+.back-arrow {
+  transform: rotate(180deg);
+}
+
+.dark-mode .menu-date-chip,
+.dark-mode .meal-day-card,
+.dark-mode .meal-menu-empty,
+.dark-mode .meal-editor-card,
+.dark-mode .meal-versions-card {
+  background: #1d3027;
+  border-color: #34483e;
+  color: #e5ece5;
+}
+
+.dark-mode .meal-day-heading h2,
+.dark-mode .meal-menu-empty h2,
+.dark-mode .meal-versions-card h2,
+.dark-mode .meal-version-row b {
+  color: #e5ece5;
+}
+
+.dark-mode .meal-day-heading,
+.dark-mode .meal-slot,
+.dark-mode .meal-admin-row,
+.dark-mode .meal-admin-table-head,
+.dark-mode .meal-version-row {
+  border-color: #34483e;
+}
+
+.dark-mode .meal-slot > b,
+.dark-mode .meal-editor-head h2 {
+  color: #e5ece5;
+}
+
+.dark-mode .meal-admin-row input {
+  background: #14231d;
+  color: #e5ece5;
+  border-color: #45594d;
+}
+
+.dark-mode .meal-version-row:hover,
+.dark-mode .meal-version-row.selected {
+  background: #263a30;
+}
+
+@media (max-width: 1000px) {
+  .weekly-menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .meal-admin-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .weekly-menu-grid {
+    grid-template-columns: 1fr;
+  }
+  .meal-menu-title {
+    align-items: flex-start;
+    gap: 10px;
+    flex-direction: column;
+  }
+  .meal-admin-table-head {
+    display: none;
+  }
+  .meal-admin-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 9px;
+  }
+  .meal-admin-row > b {
+    grid-column: 1/-1;
+    padding: 3px 0;
+  }
+  .meal-admin-row label > span {
+    display: block;
+    margin: 0 0 3px;
+    text-transform: capitalize;
+    font-size: 10px;
+    color: #899187;
+  }
+  .meal-admin-row input {
+    padding: 8px 6px;
+  }
+  .meal-editor-head {
+    align-items: flex-start;
+  }
+  .meal-admin-content {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
